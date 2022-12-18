@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/aboutus.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>REACTwiki - Övningar</title>
+</head>
+<body>
+    
+    <div id="navContainer">
+        
+        <div id="brandTextContainer">
+            <a href="index.html">
+                <img id="brandLogo" class="reactIcon" alt="brandLogo" src="./media/react_icon.png">
+                <p id="brandText">REACT<span id="wiki">wiki</span></p>
+            </a>
+        </div>
+
+        <div class="navlinksContainer">
+            <ul>
+                <li class="navItem"><a class="nav-link" href="index.html">&lt;Hem/&gt;</a></li>
+                <li class="navItem"><a class="nav-link" href="tutorials.html">&lt;Genomgångar/&gt;</a></li>
+                <li class="navItem"><a class="nav-link" href="media.html">&lt;Videomedia/&gt;</a></li>
+                <li class="navItem"><a class="nav-link clickedLink" href="aboutus.html">&lt;Om oss/&gt;</a></li>
+            </ul>
+        </div>
+
+        <div class="burgerContainer" onclick="toggleMenu(this)">
+            <div id="line1"></div>
+            <div id="line2"></div>
+            <div id="line3"></div>
+        </div>
+    </div>
+
+    <div id="menuOverlay">
+        <ul id="menuList"></ul>
+        <p class="burgerFooter">© REACT<span class="wiki">wiki</span> 2022</p>
+    </div> 
+
+    <!-- data-rellax-speed="-8"-->
+    <div class="sectionContainer" id="aboutusSectionContainer">
+        <div class="sectionTop">
+            <div class="topHeaderContainer">
+                <p class="innerHeader" id="aboutusHeader">&lt;Om REACT<span class="wiki">wiki</span>/&gt;</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sectionInfo">
+        <div id="infoGridContainer">
+            <div class="sectionCards">
+                <div class="cardChild marginInfoScope startTapestryAboutUs">
+                    <p>Grundare</p>
+                    <h1>Julius Fhager Andersson</h1>
+                    <p>
+                        Med några få ord skulle jag beskriva mig som en utåtriktad, kvalitetsmedveten och målmedveten entrepenör. 
+                        Året 2022 tog jag studenten från en programmeringsinriktad teknisk gymnasieutbildning som gav mig mycket goda kunskaper inom både webb- och backendutveckling. 
+                        Dessa kunskaper adderat med min passion för att skapa, utveckla, och slutföra egna idéer ger mig mycket goda odds för att lyckas med mina framtida IT-projekt. 
+                        Om dagarna finslipar jag mina tidigare programmeringskunskaper genom repetition och fördjupning av både nya och gamla metoder och språk, 
+                        medan jag på fritiden spelar elbas i ett rockband och sysslar med musikproduktion.
+                    </p>
+                </div>
+                <div class="cardChild endTapestryAboutUs">
+                    <p>Sleepy Julle</p>
+                </div>
+                <div class="cardChild marginInfoScope startTapestryAboutUs">
+                    <h1>Kontaktinfo</h1>
+                    <div id="startTapestryContactInfo">
+                        <div class="contactBlock">
+                            <div class="infoStart">
+                                <p>E-post:</p>
+                            </div>
+                            <div class="infoEnd">
+                                <p>03julfha@skola.boras.se</p>
+                            </div>
+                        </div>
+                        <div class="contactBlock">
+                            <div class="infoStart">
+                                <p>Mobilnummer:</p>
+                            </div>
+                            <div class="infoEnd">
+                                <p>08-405 10 00</p>
+                            </div>
+                        </div>
+                        <div class="contactBlock">
+                            <div class="infoStart">
+                                <p>Adress:</p>
+                            </div>
+                            <div class="infoEnd">
+                                <p>Chernobylreaktor 4</p>
+                            </div>
+                        </div>
+                        <div class="contactBlock">
+                            <div class="infoStart">
+                                <p>Postadress:</p>
+                            </div>
+                            <div class="infoEnd">
+                                <p>12345</p>
+                            </div>
+                        </div>
+                        <div class="contactBlock">
+                            <div class="infoStart">
+                                <p>Ort:</p>
+                            </div>
+                            <div class="infoEnd">
+                                <p>Nangijala </p>
+                            </div>
+                        </div>
+                        <div class="contactBlock">
+                            <div class="infoStart">
+                                <p>Favoritfrukt:</p>
+                            </div>
+                            <div class="infoEnd">
+                                <p>Äpple</p>
+                            </div>
+                        </div>
+                        <div class="contactBlock">
+                            <div class="infoStart">
+                                <p>Hotell:</p>
+                            </div>
+                            <div class="infoEnd">
+                                <p>Trivago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="cardChild" id="contactForm" onsubmit="sendEmail(); reset(); return false;">
+                    <h1>Skicka ett meddelande</h1>
+                    <input type="text" id="formName" placeholder="Ditt namn" required>
+                    <input type="email" id="formEmail" placeholder="Din e-post" required>
+                    <input type="text" id="formMobile" placeholder="Ditt mobilnummer" required>
+                    <textarea id="formMessage" rows="4" placeholder="Ditt meddelande"></textarea>
+                    <div id="formBtnContainer">
+                        <button type="submit">Skicka</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="pageFooterContainer">
+            <div id="footerContainer">
+                <p>© REACT<span class="wiki">wiki</span> 2022</p>
+                <div class="footerDiv">
+                    <div class="footerStart">
+                        <p>Kontaktmail:</p>
+                    </div>
+                    <div class="footerEnd">
+                        <p>03julfha@skola.boras.se</p>
+                    </div>
+                </div>
+                <div class="footerDiv" id="lastFooterDiv">
+                    <div class="footerStart">
+                        <p>Mobilnummer:</p>
+                    </div>
+                    <div class="footerEnd">
+                        <p>08-405 10 00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                SecureToken: "00b535d7-f237-450a-b9a0-49ae9fea7404",
+                To : '03julfha@skola.boras.se',
+                From : document.getElementById("formEmail").value,
+                Subject : "Nytt användarmeddelande",
+                Body : "Namn: " + document.getElementById("formName").value
+                        + "<br> E-post: " + document.getElementById("formEmail").value
+                        + "<br> Mobilnummer: " + document.getElementById("formMobile").value
+                        + "<br> Meddelande: " + document.getElementById("formMessage").value
+            }).then(
+                message => alert("Meddelandet skickades")
+            );
+        }
+    </script>
+
+    <script src="js/nav.js"></script>
+</body>
+</html>

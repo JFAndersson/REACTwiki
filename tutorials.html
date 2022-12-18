@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tutorials.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>REACTwiki - Genomgångar</title>
+</head>
+<body>
+    
+    <div id="navContainer">
+        
+        <div id="brandTextContainer">
+            <a href="index.html">
+                <img id="brandLogo" class="reactIcon" alt="brandLogo" src="./media/react_icon.png">
+                <p id="brandText">REACT<span class="wiki">wiki</span></p>
+            </a>
+        </div>
+
+        <div class="navlinksContainer">
+            <ul>
+                <li class="navItem"><a class="nav-link" href="index.html">&lt;Hem/&gt;</a></li>
+                <li class="navItem"><a class="nav-link clickedLink" href="tutorials.html">&lt;Genomgångar/&gt;</a></li>
+                <li class="navItem"><a class="nav-link" href="media.html">&lt;Videomedia/&gt;</a></li>
+                <li class="navItem"><a class="nav-link" href="aboutus.html">&lt;Om oss/&gt;</a></li>
+            </ul>
+        </div>
+
+        <div class="burgerContainer" onclick="toggleMenu(this)">
+            <div id="line1"></div>
+            <div id="line2"></div>
+            <div id="line3"></div>
+        </div>
+    </div>
+
+    <div id="menuOverlay">
+        <ul id="menuList"></ul>
+        <p class="burgerFooter">© REACT<span class="wiki">wiki</span> 2022</p>
+    </div> 
+
+    <div id="contentsContainer">
+        <div class="sectionContainer" id="tutorialsSectionContainer">
+            <div class="sectionTop">
+                <div class="topHeaderContainer">
+                    <p class="innerHeader">&lt;Genomgångar/&gt;</p>
+                </div>
+            </div>
+        </div>
+        <div id="sectionContents">
+            <ul id="contentsListContainer">
+                <li id="contentsListItem1"><div class="listDiv"></div><a href="#sectionWhatIsReact">I. Vad är React?</a></li>
+                <li id="contentsListItem2"><div class="listDiv"></div><a href="#sectionInstall">II. Hur kommer man igång med React?</a></li>
+                <li id="contentsListItem3"><div class="listDiv"></div><a href="#sectionComponents">III. Reacts komponenter och DOM</a></li>
+                <li id="contentsListItem4"><div class="listDiv"></div><a href="#sectionRender">IV. Hur man skapar och renderar komponenter</a></li>
+                <li id="contentsListItem5"><div class="listDiv"></div><a href="#sectionServer">V. Hur förbereder man en databas-server för React?</a></li>
+                <li id="contentsListItem6"><div class="listDiv"></div><a href="#sectionUpdate">VI. Uppdaterar komponenter i realtid med serverlagrad information</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="scopeTutorialContainer">
+
+        <div class="tutorialBlockHeader titleFadeDark" id="sectionWhatIsReact">
+            <h1 class="darkMode">&lt;I. Vad är react?/&gt;</h1>
+        </div>
+    
+        <div class="innerTutorialContainer" id="tutorialContainer1">
+            <div class="tutorialBlock" id="tutorialBlockIntro">
+                <p>
+                    <span class="firstLetter">R</span>eact är ett javascriptbibliotek som används för att skapa interaktiva användargränssnitt och hantera uppdateringar av existerande innehåll på ett effektivt sätt. 
+                    Det gör detta genom att använda sig av en virtuell DOM (Document Object Model), som är en representation av ett HTML dokument i minnet, och som gör det möjligt att rendera och uppdatera komponenter på skärmen på ett smidigt sätt. 
+                    Komponenter i React är rena, isolerade enheter som innehåller statisk information och logik, och som kan renderas på olika ställen i en webbapplikation.
+                    React utvecklades ursprungligen av utvecklare på Facebook och Instagram för hantering av deras nyhetsflöden, men släpptes sedan offentligt på GitHub i maj 2013 och har sedan dess använts av tusentals webbutvecklare världen över. 
+                    React fortfarande får regelbundna uppdateringar och har blivit en av de mest populära teknikerna för att skapa interaktiva användargränssnitt på webben.
+                    För att kunna använda React krävs det att man har grundläggande kunskaper i javascript, eftersom det är det språk som används för att skapa de element som användaren ser på sin skärm. 
+                    För att möjliggöra en enkel integrering mellan javascript och HTML används en viss syntax som kallas för JSX, som är en javascript-extension som gör det möjligt att skriva html kod direkt i javascript dokument. 
+                    JSX är inte nödvändigt att använda, men det förenklar arbetsprocessen avsevärt och följer automatiskt med i alla installationer av React.
+                </p>
+                <div class="codeContainer" id="codeContainerIntro">
+                    <div class="innerCodeContainer">
+                        <p class="codeHeader">1. React komponent med JSX (mindre text)</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn1" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked1" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked1" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan1">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock1">
+                                <span class="constColor">function</span> <span class="renderColor">Hello</span><span class="signColor">(props) {</span>
+                                &emsp;<span class="constColor">return</span>&ensp;<span class="signColor">&lt;</span><span class="signColor">div</span><span class="signColor">&gt;</span>Hello, <span class="signColor">{</span>props<span class="signColor">.</span>toWhat<span class="signColor">}</span><span class="signColor">&lt;/</span><span class="signColor">div</span><span class="signColor">&gt;;</span>
+                                <span class="signColor">}</span>
+                                
+                                <span class="constColor">const</span> root = ReactDOM<span class="signColor">.</span><span class="renderColor">createRoot</span><span class="signColor">( </span>document<span class="signColor">.</span><span class="renderColor">getElementById</span><span class="signColor">(</span><span class="textColor">'root'</span><span class="signColor">));</span>
+                                root<span class="signColor">.</span><span class="renderColor">render</span><span class="signColor">(&lt;</span><span class="componentColor">Hello</span>&ensp;<span class="constColor">toWhat</span>=<span class="textColor">"World"</span><span class="signColor">/&gt;);</span>                                 
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="innerCodeContainer innerCodeContainer2">
+                        <p class="codeHeader">2. React komponent utan JSX (mer text)</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn2" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked2" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked2" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan2">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock2">
+                                <span class="constColor">function</span> <span class="renderColor">Hello</span><span class="signColor">(props) {</span>
+                                &emsp;<span class="constColor">return</span>&ensp;React<span class="signColor">.</span><span class="renderColor">createElement</span><span class="signColor">(</span><span class="textColor">'div'</span><span class="signColor">,&ensp;</span><span class="constColor">null</span><span class="signColor">,&ensp;</span><span class="textColor">`Hello&ensp;</span><span class="signColor">${</span><span class="constColor">this</span><span class="signColor">.</span>props<span class="signColor">.</span>toWhat<span class="signColor">}</span><span class="textColor">`</span><span class="signColor">);</span>
+                                <span class="signColor">}</span>
+                                    
+                                <span class="constColor">const</span> root = ReactDOM<span class="signColor">.</span><span class="renderColor">createRoot</span><span class="signColor">( </span>document<span class="signColor">.</span><span class="renderColor">getElementById</span><span class="signColor">(</span><span class="textColor">'root'</span><span class="signColor">));</span>
+                                root<span class="signColor">.</span><span class="renderColor">render</span><span class="signColor">(</span>React<span class="signColor">.</span><span class="renderColor">createElement</span><span class="signColor">( </span>Hello<span class="signColor">,&ensp;{</span><span class="renderColor">toWhat</span>:&ensp;<span class="textColor">'World'</span><span class="signColor">},&ensp;</span><span class="constColor">null</span><span class="signColor">));</span>                 
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="tutorialBlockHeader titleFadeLight" id="sectionInstall">
+            <h1 class="darkMode">&lt;II. Hur kommer man igång med React?/&gt;</h1>
+        </div>
+    
+        <div class="innerTutorialContainer" id="tutorialContainer2">
+            <div class="tutorialBlock" id="tutorialBlockInstall">
+                <p>
+                    <span class="firstLetter">F</span>ör att börja använda React krävs det att man först väljer en utvecklingsmiljö som man vill arbeta med.
+                    De flesta webbutvecklare använder <span class="italized">Visual Studio Code</span> (VS Code) som utvecklingsmiljö, så därför rekommenderar jag att du använder densamma.
+                    <a class="tutorialLink" href="https://code.visualstudio.com/Download" target="_blank">Klicka här för att komma till VS Code:s nedladdningssida</a>.
+                    Efter du har installerat VS Code behöver du installera <span class="italized">Node.js</span>, en open-source plattform som möjliggör att ditt program kan kommunicera med servrar i ren javascript-kod.
+                    Detta behövs först och främst för att du ska få din React applikation att fungera, då den kräver ett antal bibliotek som Node.js kan ladda ner åt en automatiskt.
+                    <a class="tutorialLink" href="https://nodejs.org/en/download/" target="_blank">Du når nerladdningssidan för Node.js här</a>. 
+                    Det enda du behöver göra är att följa installationsvisningarna och efter installationen är färdig starta om din dator.
+                    Efter att du har laddat ner dessa väsentligheter är nästa steg att skapa en mapp som du vill att din applikation ska vara lokaliserad i.
+                    På Windows kan du göra detta genom att högerklicka på ditt skrivbord och välja <span class="highlighted">Nytt</span>
+                    och sedan klicka på <span class="highlighted">Mapp</span>.
+                </p>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/createFolder.png" alt="Figur I" onclick="enlargePicture(this)"><p>Figur I</p></div>
+                </div>
+                <p>
+                    Vad du sedan behöver göra är att öppna VS Code. 
+                    Är det din första gång du gör detta kan du börja med att följa instruktionerna angående eventuella färgteman, men därefter borde programmet se ut så här:
+                </p>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCode.png" alt="Figur II" onclick="enlargePicture(this)"><p>Figur II</p></div>
+                </div>
+                <p>
+                    Vad vi nu vill göra är att är att klicka på <span class="highlighted">Explorer</span> ikonen längst upp i VS Codes vänstra hörn.
+                    Därefter trycker du på den blåa knappen som heter <span class="highlighted">Open folder</span>. Har du gjort rätt borde sedan utforskaren dyka upp på skärmen.
+                    Nästa steg är att välja mappen som du precis skapade. Gjorde du exakt som instruktionerna hittar du mappen enligt sökvägen <span class="highlighted">Snabbåtkomst > Skrivbord > [mappnamn]</span>.
+                    Tryck sedan på "Välj mapp" efter att du har markerat mappen.
+                </p>
+                <div class="higherImageContainer bigHigherContainer">
+                    <div class="imageContainer imageGrid imageGrid3Items">
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeCircle.png" alt="Figur III" onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeOpenFolder.png" alt="Figur IV" onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper halfRoundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeChooseFolder.png" alt="Figur V" onclick="enlargePicture(this)"></div>
+                    </div>
+                    <p class="innerImageHeader">1. Figur III, 2. Figur IV, 3. Figur V</p>
+                </div>
+                <p>
+                    Efter att du har valt din mapp kommer dess namn att dyka upp i den vänstra spalten av VS Code, dvs utforskaren.
+                    Nästa steg blir att klicka på dess namn markera den, och därefter samtidigt trycka på tangenterna <span class="highlighted">Ctrl</span> och <span class="highlighted">Ö</span>
+                    på ditt tangentbord för att öppna en powershell kommandotolk i mappen.
+                    Har du inte ett nordiskt tangentbord vill du klicka på motsvarande tangent på den platsen på tangentbordet.
+                    Efteråt bör VS Code se ut så här:
+                </p>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeNewApp.png" alt="Figur VI" onclick="enlargePicture(this)"><p>Figur VI</p></div>
+                </div>
+                <p>
+                    Som man kan se har en kommandotolk öppnats nere i den högra spalten av VS Code (förstorad genom bilden nedan). 
+                    Här kommer du att vilja skriva ett antal kommandon som installerar din första React app.
+                    Det första kommandot är:&ensp;<span class="inlineCodeText"><span class="codeYellow">npx</span> create-react-app appnamn</span>.
+                    Genom att skriva in detta kommandot i konsolen, och ersätta "appnamn" med vad du vill kalla applikationen, kommer VS Code att ladda ner och installera en React applikation i den mapp du har valt.
+                    Detta kommandot fungerar endast om du har installerat Node.js på korrekt sätt, då "npx" är ett verktyg som följer med i Node.js-paketet och installeras tillsammans med "npm". 
+                    Mer fördjupat är NPM och NPX är båda verktyg som ofta används inom React-utveckling. 
+                    NPM står för Node Package Manager, och det är ett verktyg som används för att hantera och installera paket för ditt React-projekt. 
+                    Det här inkluderar paket som har publicerats på npm-registret, såväl som paket som du har skapat själv. 
+                    NPX, å andra sidan, är ett verktyg som används för att köra paket som har installerats via NPM. 
+                    Det gör att du kan köra kommandoradsverktyg från npm-paket, utan att behöva installera dem globalt på ditt system.
+                    Denna installationsprocess kan ta några minuter.
+                </p>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage overrideWidth" src="./media/VSCode/VSCodeNpxInstall.png" alt="Figur VII" onclick="enlargePicture(this)"><p>Figur VII</p></div>
+                </div>
+                <p>
+                    Efter din första React app har installerats kommer namnet du givit den dyka upp i filträdet under motsvarande mappnamn.
+                    Klickar du på detta namn visas alla delar av applikationen. 
+                    Det viktigaste du behöver veta är att din JSX kod bör skrivas i de javascript (js) dokument placerade i "src" mappen.
+                    Dessa dokument kommunicerar sedan i slutändan med index.html filen som ligger i "public" mappen, vars innehåll sedan automatiskt renderas till 
+                    hemsidans viewport, dvs det användaren ser.
+                </p>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeNewReactApp.png" alt="Figur VIII" onclick="enlargePicture(this)"><p>Figur VIII</p></div>
+                </div>
+                <div>
+                    <p>
+                        <span class="codeYellowBig">Notera!</span> När du skapar din React applikation följer det med en hel del onödiga filer som du aldrig kommer att behöva använda.
+                        I nästa steg kommer jag att snabbt visa vilka av filerna som kan raderas. Känner du att detta är relevant kan läsa vidare.
+                        Annars klickar du <a class="tutorialLink" href="#sectionComponents">här</a> för att komma till del tre.
+                        Så vilka kan man radera? Inom de röda fyrkanterna kan du se de filer som jag personligen rekommenderar att du tar bort.
+                        Detta eftersom de inte är nödvändiga för att få ditt program att fungera. De följer endast med i "mallen" för att visa hur
+                        en potentiell React applikation hade kunnat se ut.
+                    </p>
+                </div>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeRemovable.png" alt="Figur IX" onclick="enlargePicture(this)"><p>Figur IX</p></div>
+                </div>
+                <p>
+                    Sedan vill du öppna <span class="highlighted">index.html</span> filen i "public" mappen och radera den följande texten.
+                </p>
+                <div class="higherImageContainer bigHigherContainer">
+                    <div class="imageContainer imageGrid imageGrid2Items">
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeRemovableHtml1.png" alt="Figur X"  onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper halfRoundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeRemovableHtml2.png" alt="Figur XI" onclick="enlargePicture(this)"></div>
+                    </div>
+                    <p class="innerImageHeader">1. Figur X, 2. Figur XI</p>
+                </div>
+                <p>
+                    Därefter öppnar du <span class="highlighted">manifest.json</span>, också i "public" mappen, och radera den följande texten.
+                </p>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeRemovableManifest.png" alt="Figur XII" onclick="enlargePicture(this)"><p>Figur XII</p></div>
+                </div>
+                <p>
+                    Slutligen öppnar du <span class="highlighted">index.js</span> och raderar den kod som refererar till de redan borttagna filerna.
+                    Efter det har du lyckats med att installera och förbereda din första React applikation!
+                </p>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer lastImageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeRemovableJS.png" alt="Figur XIII" onclick="enlargePicture(this)"><p>Figur XIII</p></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="tutorialBlockHeader titleFadeBlue" id="sectionComponents">
+            <h1 class="darkMode">&lt;III. Reacts komponenter och DOM/&gt;</h1>
+        </div>
+    
+        <div class="innerTutorialContainer" id="tutorialContainer3">
+            <div class="tutorialBlock" id="tutorialBlockComponents">
+                <p>
+                    <span class="firstLetter">R</span>eact använder komponenter, vilket är javascript funktioner som returnerar HTML kod, 
+                    för att skapa anpassningsbara och återanvändbara gränssnitt. 
+                    Komponenterna är små, isolerade och hanterar sin egen logik. 
+                    Detta gör det möjligt för programmeraren att bygga stora och komplexa webbapplikationer med React.
+                    Att dela upp sin kod i komponenter gör det också enklare för utvecklaren att felsöka sitt projekt då problem uppstår, 
+                    eftersom komponenters länkar och följaktligen innehåll enkelt kan uteslutas från det objekt som man vill ska renderas till DOM:en.
+                    Din DOM, som tidigare beskrivet, står för "Document Object Model" och representerar hierarkin av all HTML kod som visas i din applikation.
+                    I React används rot-div:en som en container för att innesluta React-komponenter. 
+                    Denna div är ansluten till webbsidans DOM och det är där React-komponenterna renderas och visas för användaren. 
+                    Rot-div:en är därför viktig för att förena komponenterna med webbsidan och göra det möjligt för dem att renderas.
+                    Denna rot kan du se nedanför markerad genom den gula fyrkanten.
+                </p>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeRoot.png" alt="Figur XIV" onclick="enlargePicture(this)"><p>Figur XIV</p></div>
+                </div>
+                <p>
+                    För att se sin React hemsida, dvs DOM, behöver man först starta upp en npm server.
+                    Man gör detta genom att återigen öppna sin kommandotolk (trycka <span class="highlighted">Ctrl</span> och <span class="highlighted">Ö</span> samtidigt).
+                    Därefter måste man genom ett kommando öppna din React applikations projektfil. 
+                    Detta kommando är:&ensp;<span class="inlineCodeText"><span class="codeYellow">cd</span> react-app</span>.
+                    Kallade du inte din React applikation react-app, ersätter du "react-app" med motsvarande namn. 
+                    Din kommandotolks filväg bör sedan se ut ungefär så här ifall din ursprunliga mapp heter "Ny mapp": <span class="highlighted">PS C:\Users\Julle\Desktop\Ny mapp\react-app></span>.
+                    Sista steget är att skriva <span class="inlineCodeText"><span class="codeYellow">npm</span> start</span>, som startar upp servern för din React applikation.
+                    Efter du har skrivit dessa två kommandon kommer din webbläsare att öppnas och skicka dig till en lokal localhost port, oftast 3000, där din applikations DOM visas.
+                    Har du följt tidigare steg noggrant kommer en tom vit skärm visas (som du kan se i figur XVI), då inga komponenter har skapats ännu.
+                </p>
+                <div class="higherImageContainer bigHigherContainer">
+                    <div class="imageContainer imageGrid imageGrid2Items">
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeNpmStart.png" alt="Figur XV" onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper halfRoundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeLocalhost.png" alt="Figur XVI" onclick="enlargePicture(this)"></div>
+                    </div>
+                    <p class="innerImageHeader">1. Figur XV, 2. Figur XVI</p>
+                </div>
+                <p>
+                    Så hur skapar man då komponenter att rendera? Det får du lära dig nu!
+                </p>
+            </div>
+        </div>
+    
+        
+        <div class="tutorialBlockHeader titleFadeGrey" id="sectionRender">
+            <h1 class="darkMode">&lt;IV. Hur man skapar och renderar komponenter/&gt;</h1>
+        </div>
+    
+        <div class="innerTutorialContainer" id="tutorialContainer4">
+            <div class="tutorialBlock" id="tutorialBlockRender">
+                <p>
+                    <span class="firstLetter">E</span>n viktig aspekt av React utveckling utgår på att man hierarkiskt strukturerar sin kod och följaktligen komponenter in i olika child-dokument.
+                    Dessa dokument vill man sedan ansluta till <span class="highlighted">index.js</span>, applikationens parent-fil som befinner sig högst upp i hierarkin, 
+                    och därigenom rendera dem till DOM:en.
+                    Att arbeta med React medför således en hierarkisk process som man vill vara uppmärksam kring.
+                    Säg exempelvis att jag vill rendera en bild och en text under bilden i mitten av skärmen.
+                    Vad jag först behöver göra i så fall är att skapa ett nytt javascript dokument som jag väljer att döpa till "cardView".
+                    Detta gör jag genom att först klicka på mappen "src", och sedan klicka på filikonen med ett plustecken i VS Codes vänstra spalt för att skapa en fil där.
+                    Sedan skriver jag <span class="highlighted">cardView.js</span>, varvid "js" taggen på slutet av namnet gör filen till en javascriptfil.
+                </p>
+                <div class="higherImageContainer bigHigherContainer">
+                    <div class="imageContainer imageGrid imageGrid2Items">
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeCreateFile.png" alt="Figur XVII"  onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper halfRoundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeCreateFile2.png" alt="Figur XVIII" onclick="enlargePicture(this)"></div>
+                    </div>
+                    <p class="innerImageHeader">1. Figur XVII, 2. Figur XVIII</p>
+                </div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        Inuti <span class="highlighted">cardView.js</span> börjar jag sedan med att skriva en normal javascript funktion.
+                        Denna funktionen kan vi kalla "CardWithText". Notera hur jag har valt att skriva funktionens första bokstav som en versal. 
+                        Detta är vad som på utsidan definierar skillnaden mellan vanliga javascript funktioner och komponenter.
+                        Den inre skillnaden är att komponenter alltid returnerar HTML, medan funktioner hanterar mer specifik logik.
+                        Dessutom har jag fört in <span class="highlighted">props</span> (properties) som parameter i komponenten, vilket representerar ett objekt som vi sedan hämtar relevanta värden ifrån.
+                        Dessa värden förs naturligt in komponenten när den kallas i parent-dokumentet.
+                        Jag börjar i alla fall med att skriva ut den tomma komponenten:
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">3. Tom komponent CardWithText</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn3" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked3" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked3" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan3">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock3">
+                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span><span class="signColor">(</span><span class="varColor">props</span><span class="signColor">){</span>
+                                &emsp;<span class="textColor">//returnera html här...</span>
+                                <span class="signColor">}</span>                          
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeFirstComponent1.png" alt="XIX" onclick="enlargePicture(this)"><p>Figur XIX</p></div>
+                </div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        Nästa steg är att ge komponenten returneringsfunktionalitet. Detta kan man göra genom att skriva <span class="highlighted">return</span> inne i komponenten och på samma rad skriva den HTML man vill returnera.
+                        Vill man istället returnera fler än en rad av HTML kod kan man skriva två paranteser efter "return" och sedan strukturera kod-elementen därimellan.
+                        En annan viktig aspekt kring komponenter är att om man vill returnera flera kodblock samtidigt måste dessa vara strukturerade som child-elements i en container.
+                        Hierarkiskt måste det alltid finnas en container längst upp som håller ihop all JSX, annars blir det syntaxfel. 
+                        Eftersom vi vill rendera en bild och ett textelement till DOM:en samtidigt, dvs två olika element, måste vi därför placera dem i en container.
+                        Vi väljer därför att först placera en div i returneringsblocket innan vi går vidare.
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">4. CardWithText med returnering</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn4" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked4" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked4" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan4">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock4">
+                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span><span class="signColor">(</span><span class="varColor">props</span><span class="signColor">){</span>
+                                &emsp;<span class="constColor">return</span> (
+                                &emsp;&emsp;<span class="signColor">&lt;div&gt;&lt;/div&gt;</span>
+                                &emsp;)
+                                <span class="signColor">}</span>                          
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeFirstComponent2.png" alt="Figur XX" onclick="enlargePicture(this)"><p>Figur XX</p></div>
+                </div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        Nu när vi vill strukturera bilden och texten räcker det med att placera dem i div:en inanför render.  
+                        Vi placerar bildens tagg ovanför textens, och ger dem sedan eventuell relevant metadata.
+                        Mellan paragraf-taggarna och som bild-taggens "src" i kodexempel 5 kan man se att jag har skrivit "props" och sedan ett namn inanför två <span class="highlighted">{</span> tecken.
+                        När man skriver kod mellan dessa tecken innebär det att jag vill interagera med information och logik utanför den nuvarande JSX HTML koden.
+                        I detta sammanhanget hämtar jag värden från komponentens props.
+                        Sist ger vi div-containern ett klassvärde, "postContainer", så att innehållet går att modifera i ett separat css dokument.
+                        Komponenten är nu färdigställd. Sista steget innan dess innehåll görs synligt i DOM:en blir att exportera komponenten till parent-dokumentet, "index.js", och sedan rendera det.
+                        Detta kan man göra på flera sätt beroende på sammanhang, men när man endast vill exportera en enstaka komponent från en fil anser jag att den följande metoden är tydligast.
+                        Det du behöver skriva är:&ensp;<span class="inlineCodeText"><span class="constColor">export default</span> <span class="renderColor">CardWithText</span>;</span> , 
+                        och detta skriver du under komponenten efter dess end-bracket. I figur XXI nedan sker detta på rad 11.
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">5. Komplett komponent CardWithText</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn5" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked5" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked5" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan5">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock5">
+                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span><span class="signColor">(</span><span class="varColor">props</span><span class="signColor">){</span>
+                                &emsp;<span class="constColor">return</span> (
+                                &emsp;&emsp;<span class="signColor">&lt;div</span> <span class="tagColor">className</span>=<span class="textColor">"postContainer"</span><span class="signColor">&gt;</span> 
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;img</span> <span class="constColor">src</span>={<span class="varColor">props</span><span class="signColor">.</span>url} <span class="constColor">alt</span>=<span class="textColor">"picture"</span> <span class="signColor">/&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;p&gt;</span>{<span class="varColor">props</span><span class="signColor">.</span>caption}<span class="signColor">&lt;/p&gt;</span>     
+                                &emsp;&emsp;<span class="signColor">&lt;/div&gt;</span>
+                                &emsp;)
+                                <span class="signColor">}</span>                          
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeFirstComponent3.png" alt="Figur XXI"  onclick="enlargePicture(this)"><p>Figur XXI</p></div>
+                </div>
+                <p>
+                    För att sedan rendera elementen till DOM:en behöver du öppna index.js och importera komponenten vi precis exporterade. Detta gör du genom att skriva <span class="inlineCodeText"><span class="constColor">import</span><span class="renderColor"> CardWithText</span><span class="constColor"> from</span><span class="textColor"> "./cardView"</span>;</span> i den övre delen av dokumentet.
+                    Har du klistrat in koden korrekt kommer vi nu kunna kalla på CardViewText. Som du vet kallar man på funktioner så här i normal javascript: <span class="highlighted">funktion(parametrar)</span>. 
+                    När man arbetar med komponenter i JSX skiljer sig sättet man kallar på dessa metoder drastiskt. För att kalla på en komponent skriver du istället: <span class="highlighted">&lt;Funktion parameter=värde /&gt;</span>. 
+                    När vi kallar på vår komponent, CardViewText, skriver vi således <span class="inlineCodeText"><span class="signColor">&lt;</span><span class="renderColor">CardWithText</span> <span class="signColor">/&gt;</span></span> inanför <span class="highlighted">root.render</span> paranteserna.
+                    Eftersom vi använde oss av två props, "caption" och "url", måste vi även ge dem några värden. Vi ändrar därför kallelsen till det följande: 
+                    <span class="inlineCodeText"><span class="signColor">&lt;</span><span class="renderColor">CardWithText</span> <span class="constColor">caption</span>={captionVar} <span class="constColor">url</span>={urlVar}<span class="signColor"> /&gt;</span></span>.
+                    Således ges props-objektet i CardViewText information från de ännu ej skapade variablerna "captionVar" och "urlVar". Sista steget blir naturligtvis att skapa dessa variabler. Detta gör vi i normal javascript högst upp i dokumentet under alla importsatser.
+                    Dessa variabler kan du ge valfria värden. Det enda du behöver förhålla dig till är att värdet av "urlVar" måste vara en bildlänk i string-format. 
+                    Hur index.js och din DOM bör se ut kan du se genom figurerna nedan.
+                </p>
+                <div class="higherImageContainer bigHigherContainer">
+                    <div class="imageContainer imageGrid imageGrid2Items">
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeFirstComponent4.png" alt="Figur XXII"  onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper halfRoundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeFirstComponent5.png" alt="Figur XXIII" onclick="enlargePicture(this)"></div>
+                    </div>
+                    <p class="innerImageHeader">1. Figur XXII, 2. Figur XXIII</p>
+                </div>
+                <p>
+                    Så hur ser vi vår nyskapade komponent? 
+                    Har du din NPM server körandes borde din DOM automatiskt uppdateras efter du har sparat alla dina nyredigerade dokument.
+                    Är den inte körandes kan starta den genom att öppna kommandotolken med <span class="highlighted">Ctrl + Ö</span>, välja React appen med 
+                    <span class="inlineCodeText"><span class="codeYellow">cd</span> react-app</span>, och sedan skriva 
+                    <span class="inlineCodeText"><span class="codeYellow">npm</span> start</span>.
+                    Då borde din webbläsare öppnas upp och skicka dig till port 3000 där du nu har möjlighet att bevittna ditt mästerverk.
+                </p>
+            </div>
+        </div>
+                
+        <div class="tutorialBlockHeader titleFadeLight" id="sectionServer">
+            <h1 class="darkMode">&lt;V. Hur förbereder man en databas-server för React?/&gt;</h1>
+        </div>
+    
+        <div class="innerTutorialContainer" id="tutorialContainer5">                
+            <div class="tutorialBlock" id="tutorialBlockServer">
+                <p>
+                    Serverkommunikation är en mycket viktig del inom React utveckling. 
+                    Först och främst ger den dig möjlighet att bygga applikationer som kan visa dynamisk data -
+                    till exempel om du bygger en sociala media-applikation och du hämtar de senaste inläggen från en server. 
+                    Utan denna kommunikation skulle din applikation endast kunna visa statisk information som är inbyggt i programmet.
+                    Det vill säga att applikationer och hemsidor som är dynamiska, data-drivna och kan interagera med andra system och API:er (99% av internet) inte hade kunnat utvecklas.
+                    I den följande genomgången kommer jag därför att förklara hur du kan bygga sådana system.
+                </p>
+                <div class="textBreakerContainer noIcon"></div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        Första steget blir således att skapa serverns projektmapp. 
+                        Denna mapp kan du exempelvis döpa till "server".
+                        Efter du har skapat mappen vill vi installera alla serverfiler. 
+                        Detta åstadkommer vi genom att skriva det följande i konsolen (om "server" var vad du kallade mappen): <span class="inlineCodeText"><span class="codeYellow">cd</span> server</span>, och därefter 
+                        <span class="inlineCodeText"><span class="codeYellow">npm</span> install json-server</span> i samma kommandotolk.
+                        När vi har installerat serverns filer har vi dock inte fått med någon databas som faktiskt lagrar data. 
+                        Denna databasen, dvs fil, behöver vi skapa på egen hand och sedan döpa till <span class="highlighted">db.json</span>.
+                        Notera filens tagg, <span class="highlighted">.json</span>, vilket är javascript format som primärt används för att skriva databaser.
+                        Denna filen behöver sedan ligga bredvid de andra två ".json" filerna, <span class="highlighted">package.json</span> och <span class="highlighted">package-lock.json</span>, vars uppgifter är att lagra serverns metadata.
+                        I vår nyskapade databasfil vill vi sedan formulera informationen som vi vill lagra. 
+                        Eftersom vi tidigare skapade en bild och en rubrik, vilket hade kunnat tolkas som ett inlägg på en social media, 
+                        hade vi kunnat skapa en databas som lagrar inläggens "likes". I så fall kan vi använda den följande json koden som skapar en array "likes" och ger array:en ett objekt som representerar en gillning.
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">6. En "likes" databas</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn6" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked6" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked6" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan6">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock6">
+                                <span class="signColor">{</span>
+                                &emsp;<span class="renderColor">"likes"</span><span class="signColor">:[</span>
+                                &emsp;&emsp;<span class="signColor">{</span>
+                                &emsp;&emsp;&emsp;<span class="renderColor">"user"</span>: <span class="textColor">"Username"</span>
+                                &emsp;&emsp;&emsp;<span class="renderColor">"id"</span>: <span class="varColor">1</span>,
+                                &emsp;&emsp;<span class="signColor">}</span>
+                                &emsp;<span class="signColor">]</span>
+                                <span class="signColor">}</span>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="higherImageContainer bigHigherContainer">
+                    <div class="imageContainer imageGrid imageGrid2Items">
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/serverCreation.png" alt="Figur XXIV"  onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper halfRoundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/serverDatabase.png" alt="Figur XXV" onclick="enlargePicture(this)"></div>
+                    </div>
+                    <p class="innerImageHeader">1. Figur XXIV, 2. Figur XXV</p>
+                </div>
+                <p>
+                    Sista steget blir att starta servern, och detta gör vi genom att skriva <span class="inlineCodeText"><span class="codeYellow">json-server</span> --watch db.json</span> i servermappens kommandotolk.
+                    Detta kommandot (eller mer specifikt "--watch" delen av kommandot) gör även så att servern automatiskt uppdateras varje gång man manuellt går in och ändrar <span class="highlighted">db.json</span> filens innehåll.
+                    Man behöver alltså inte starta servern på nytt varje gång innehållet ändras, vilket underlättar arbetsprocessen. 
+                    Efter du har skrivit in detta i VSCode terminalen borde du tas till din webbläsare där du får se en vit skärm med massa text.
+                    I mitten av denna skärmen hittar vi <span class="highlighted">/likes</span> sektionen av din databas, och om vi klickar på denna länken hittar vi alla sparade likes.
+                </p>
+                <div class="higherImageContainer bigHigherContainer">
+                    <div class="imageContainer imageGrid imageGrid2Items">
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/serverSplash.png" alt="Figur XXVI"  onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper halfRoundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/serverContent.png" alt="Figur XXVII" onclick="enlargePicture(this)"></div>
+                    </div>
+                    <p class="innerImageHeader">1. Figur XXVI, 2. Figur XXVII</p>
+                </div>
+                <p>
+                    Om du fick ett errormeddelande när du försökte starta servern kan det bero på att din dator inte tillåter osignerade skript, dvs skript som privatpersoner skapar, från att göra förändringar i dina filer.
+                    Du kan lösa detta problemet genom att öppna "powershell" på din windows dator som administratör och ändra dina exekveringsinställningar till "RemoteSigned" genom det följande kommandot: 
+                    <span class="inlineCodeText"><span class="codeYellow">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</span></span>.  
+                </p>
+                <div class="textBreakerContainer noIcon"></div>
+                <p>
+                    Du har nu skapat din första databas-server! Prova att ändra innehållet i "db.json" och se hur innehållet i webbläsaren också förändras när du laddar om sidan. 
+                </p>
+            </div>
+        </div>
+    
+        <div class="tutorialBlockHeader titleFadeBlue" id="sectionUpdate">
+            <h1 class="darkMode">&lt;VI. Uppdaterar komponenter i realtid med serverlagrad information/&gt;</h1>
+        </div>
+    
+        <div class="innerTutorialContainer" id="tutorialContainer6">
+            <div class="tutorialBlock" id="tutorialBlockUpdate">
+                <p>
+                    <span class="firstLetter">S</span>å hur bygger man då en React applikation som är beroende av en databas? Det första steget för att förbereda sin React applikation för att kommunicera med servrar är att installera ramverket "Axios".
+                    Detta ramverk möjliggör så att man med enkel syntax kan hämta och skriva data till json servrar.
+                    Axios är inte det enda ramverket som möjliggör detta, men det är en utav de mest lättanvända verktygen.
+                    Du installerar Axios genom att skriva <span class="inlineCodeText"><span class="codeYellow">cd</span> react-app</span> i kommandotolken för att välja din reactapplikations projektmapp,
+                    och sedan <span class="inlineCodeText"><span class="codeYellow">npm</span> install axios</span> för att ladda ner filerna.
+                    Nästa steg är att skapa en komponent som hämtar informationen från databasen vi skapade i förra genomgången och som sedan skriver ut antalet "likes" under den ursprungliga bilden.
+                    För att göra detta behöver du först skapa en ny javascript fil i "src" mappen i din React applikation. 
+                    Denna fil kan du exempelvis döpa till "FetchAndPost". I filen skapar du sedan en komponent som returnerar en div med en text och en knapp inuti sig.
+                    Därefter exporterar du komponenten som default <span class="inlineCodeText"><span class="constColor">export default</span> <span class="renderColor">FetchAndPostLikes</span>;</span>, och importerar ramverken axios
+                    <span class="inlineCodeText"><span class="constColor">import</span><span class="renderColor"> axios</span><span class="constColor"> from</span><span class="textColor"> "axios"</span>;</span> samt useState och useEffect
+                    <span class="inlineCodeText"><span class="constColor">import</span><span class="renderColor"><span class="signColor"> {</span>useState<span class="signColor">, </span>useEffect<span class="signColor">}</span></span><span class="constColor"> from</span><span class="textColor"> "react"</span>;</span>. Då kanske du tänker: "Vad skjutton är useState och useEffect?".
+                    Svaret är att de både har och göra med Hooks, som är en funktionell programmeringsteknik i React.
+                </p>
+                <div class="textBreakerContainer noIcon"></div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        Hooks gör det möjligt att använda statlig komponentlogik (till exempel att hålla reda på data eller hantera händelser) utan att behöva skapa en klasskomponent. 
+                        Det ger oss möjlighet att skriva mer enhetlig och lättläst kod, eftersom vi slipper att skapa separata klasser för våra komponenter.
+                        Det finns olika sorters hooks, men de mest grundläggande är just useState och useEffect. 
+                        useState låter oss hålla reda på data i våra komponenter, medan useEffect låter oss köra specifik kod när våra komponenter uppdateras eller monteras.
+                        På så sätt kan man hålla variabler uppdaterade under din applikations körtid, vilket är användbart för exempelvis sociala medier som hela tiden behöver hålla koll på inläggs gillningar m.m.
+                        Efter du har importerat dessa förnödenheter borde din fil och din komponent i alla fall se ut så här:
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">7. Tidig FetchAndPost komponent</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn7" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked7" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked7" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan7">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock7">
+                                <span class="constColor">function</span> <span class="renderColor">FetchAndPostLikes</span><span class="signColor">(){</span>
+                                &emsp;<span class="constColor">return</span> (
+                                &emsp;&emsp;<span class="signColor">&lt;div&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;p&gt;</span><span class="signColor">&lt;/p&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;button&gt;</span><span class="signColor">&lt;/button&gt;</span>
+                                &emsp;&emsp;<span class="signColor">&lt;/div&gt;</span>
+                                &emsp;)
+                                <span class="signColor">}</span>
+                              </pre>
+                              
+                        </div>
+                    </div>
+                </div>
+                <div class="higherImageContainer singleImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/VSCodeFetchAndPost1.png" alt="Figur XXVIII"  onclick="enlargePicture(this)"><p>Figur XXVIII</p></div>
+                </div>
+                <p>
+                    Nästa moment är att skapa en hook som lagrar värdet på antalet likes under appens körtid. 
+                    Det som gör hooks speciella är att de egentligen kan ses som en array som har två inbyggda variabler, 
+                    en som man kallar på för att hämta dess lagrade värde, och en som man kallar på för att ändra hook:ens lagrade värde.
+                </p>
+                <div class="textBreakerContainer noIcon"></div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        När vi skapar vår hook skriver vi följaktligen <span class="inlineCodeText">const [likeNum, setLikeNum] = useState(0);</span>, vilket skapar en state med standardvärdet 0 (dvs det värdet som den har innan den uppdateras).
+                        Hooken placerar vi sedan längst upp i vår nya komponent. Dess position i hierarkin är nämligen kritiskt för att allting ska fungera. 
+                        Det finns exempelvis en hel del regler kring användandet av hooks.
+                        En av dessa regler är att man endast kan skapa och kalla på dem inuti React komponenter. 
+                        En annan regel är att alla hooks man skapar måste vara placerade högst upp i komponenten.
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">8. Komponent med en react hook</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn8" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked8" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked8" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan8">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock8">
+                                <span class="constColor">function</span> <span class="renderColor">FetchAndPostLikes</span><span class="signColor">(){</span>
+                              
+                                &emsp;<span class="constColor">const</span> [<span class="varColor">likeNum</span>, <span class="varColor">setLikeNum</span>] = <span class="constColor">useState</span>(<span class="numberColor">0</span>);
+                              
+                                &emsp;<span class="constColor">return</span> (
+                                &emsp;&emsp;<span class="signColor">&lt;div&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;p&gt;</span><span class="signColor">&lt;/p&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;button&gt;</span><span class="signColor">&lt;/button&gt;</span>
+                                &emsp;&emsp;<span class="signColor">&lt;/div&gt;</span>
+                                &emsp;)
+                                <span class="signColor">}</span>
+                            </pre>                              
+                        </div>
+                    </div>
+                </div>
+                <div class="textBreakerContainer noIcon"></div>
+                <p>
+                    Efter vi har skapat vår "likeNum" hook är nästa steg att hämta antalet likes från vår databas med Axios och spara värdet i likeNum genom att föra in det som en parameter i "setLikeNum".
+                    Det är även nu som useEffect blir relevant. Det är nämligen inuti den inbyggda useEffect som vi vill kalla på alla funktioner/kod som ska köras varje gång vår hook uppdateras.
+                </p>
+                <div class="textBreakerContainer noIcon"></div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        Vi börjar därför med att skriva <span class="inlineCodeText">useEffect(() => {//kalla på funktioner här});</span><span class="highlighted"> under</span> vår likeNum hook.
+                        Sedan lägger vi till "[likeNum]" innan slutparantesen, vilket meddelar React att all kod inuti useEffect ska köras varje gång värdet på likeNum förändras, dvs initialt då likeNum ges värdet 0 och varje gång därefter när användaren klickar på "gilla-knappen":
+                        <span class="inlineCodeText">useEffect(() => {//kalla på funktioner här}, [likeNum]);</span>. 
+                        Mellan useEffects klammerparanteser skapar vi sedan en asynkron (async) funktion kallad "getData" som vi sedan vill skriva all kod inuti. 
+                        Varför vi skapar en async funktion och inte en normal javascript funktion (som automatiskt är synkronisk) beror på att vi inte vill stanna upp hela applikationen medan axios hämtar all data, 
+                        en process som kan ta allting från 1ms till 10s beroende på hur mycket information som begärs.
+                        Genom att göra funktionen asynkron kan alla element som faktiskt är färdiga fortfarande skickas ut till DOM:en då "likeNum" förblir odefinierat, vilket gör att appen fortfarande upplevs som mer responsiv trots informationsbristen.
+                        Detta möjliggör också att man kan skriva ut "laddar..." bredvid texten som visar antalet likes då värdet på "likeNum" ännu inte har hämtats.
+                        Att skriva ut "laddar..." är dock inte jätteviktigt i vårt sammanhang eftersom vi hämtar väldigt lite information och följaktligen får en mycket snabb fetch request.
+                        Vi gör dock fortfarande funktionen asynkron eftersom det är så här man arbetar med hämtning av data i React vanligtvis.
+                        Innan vi går vidare bör din useEffect hook se ut så här:
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">9. Tom useEffect hook</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn9" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked9" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked9" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan9">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock9">
+                                <span class="constColor">useEffect</span>(<span class="signColor">()</span> => {
+                              
+                                &emsp;<span class="constColor">const</span> <span class="renderColor">getData</span> = <span class="constColor">async</span> <span class="signColor">()</span> => {
+                                &emsp;&emsp;<span class="textColor">//skriv kod här</span>
+                                &emsp;};
+                              
+                                &emsp;<span class="renderColor">getData</span>();
+                                }, [<span class="varColor">likeNum</span>]);
+                              </pre>
+                              
+                        </div>
+                    </div>
+                </div>
+                <div class="textBreakerContainer noIcon"></div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        När vi hämtar vår data använder vi som tidigare förklarat ramverket axios. 
+                        För att göra en "fetch request" (dvs hämta data) skriver man <span class="inlineCodeText">axios.get(//databasens address).then(response => {//hantera data här})</span>.
+                        Eftersom databasen vi skapade i förra genomgången sparade alla gillningar i en array kallad "likes" blir vår databas-address <span class="highlighted">http://localhost:3000/likes</span> om servern körs på port 3000.
+                        Inuti klammerparanteserna av "axios.get" vill vi sedan uppdatera vår hook "likeNum". Detta åstadkommer vi genom att skriva <span class="inlineCodeText">setNumLikes(response.data.length)</span>.
+                        Vad denna kod gör är att uppdatera likeNum med värdet på antalet objekt i array:en "likes", vilket representerar antalet gillningar på inlägget. Texten <span class="highlighted">response.data</span> är således "likes" array:en i json form.
+                        Under <span class="highlighted">.then()</span> sektionen av kallelsen hittar vi även <span class="highlighted">.catch()</span>, vilket gör så att eventuella errormeddelanden skrivs ut till konsolen.
+                        Detta är mycket användbart för att identifiera eventuella fetch problem, så denna ska alltid skrivas ut när axios interagerar med din databas.
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">10. Komplett useEffect hook</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn10" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked10" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked10" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan10">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock10">
+                                <span class="constColor">useEffect</span>(<span class="signColor">()</span> => {
+                              
+                                &emsp;<span class="constColor">const</span> <span class="renderColor">getData</span> = <span class="constColor">async</span> <span class="signColor">()</span> => {
+                                          
+                                &emsp;&emsp;<span class="constColor">await</span> axios<span class="signColor">.</span><span class="renderColor">get</span>(<span class="textColor">"http://localhost:3000/likes"</span>)
+                                &emsp;&emsp;.then(<span class="varColor">response</span> => {
+                                &emsp;&emsp;&emsp;<span class="tagColor">setLikeNum</span>(<span class="varColor">response</span>.<span class="constColor">data</span>.<span class="constColor">length</span>);
+                                &emsp;&emsp;}).catch(<span class="varColor">error</span> => {
+                                &emsp;&emsp;&emsp;console.<span class="constColor">log</span>(<span class="varColor">error</span>);
+                                &emsp;&emsp;});
+                                &emsp;};
+                              
+                                &emsp;<span class="renderColor">getData</span>();
+                                }, [<span class="varColor">likeNum</span>]);
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="textBreakerContainer noIcon"></div>
+                <p>
+                    Efter du har uppdaterat din useEffect hook är det dags för att förbereda "gilla-knappens" logik!
+                </p>
+                <div class="textBreakerContainer noIcon"></div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        Vad vi vill ska hända när man klickar på gillaknappen är att axios skickar ett objekt till vår databas och sparar den i "likes" array:en.
+                        Vi kan därför börja med att skapa en funktion som hanterar post-requesten. Själv döper jag funktionen till "handleLike".
+                        Nästa steg blir att skapa formatet för det objekt vi vill att axios ska leverera. Detta bestämmer vi genom att skapa ett objekt inuti funktionen som vi kan döpa till "like".
+                        Inuti detta objektet kan vi skriva vad som helst eftersom vi i denna genomgången inte kallar på "like" objektens innehåll, 
+                        men för att få databasen att se hyfsat streamlined ut följer vi samma format som det urpsrungliga like objektet har.
+                        Dvs att ge objektet nyckeln "user" med värdet "Ny användare". Därefter skriver vi vår axios kallelse.
+                        Istället för att kalla på "axios.get()" kallar vi nu istället på "axios.post()". 
+                        Den enda skillanden är att vi för in objektet vi skapade bredvid databasens address. 
+                        Vi skickar således objektet genom <span class="highlighted">axios.post(address, objekt)</span>,
+                        och uppdaterar återigen vår "likeNum" hook i <span class="highlighted">.then()</span> funktionen.
+                    </p> 
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">11. Gillaknappens "post"-logik</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn11" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked11" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked11" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan11">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock11">
+                                const <span class="constColor">handleLike</span> = <span class="constColor">()</span> => {
+
+                                    &emsp;const <span class="varColor">like</span> = {
+                                    &emsp;&emsp;<span class="constColor">user</span>: <span class="textColor">"Ny användare"</span>
+                                    &emsp;};
+                                    
+                                    &emsp;axios.<span class="constColor">post</span>(<span class="textColor">"http://localhost:3000/likes"</span>, <span class="varColor">like</span>)
+                                    &emsp;&emsp;.<span class="constColor">then</span>(<span class="varColor">response</span> => {
+                                    &emsp;&emsp;&emsp;<span class="tagColor">setLikeNum</span>(<span class="varColor">response</span>.<span class="constColor">data</span>.<span class="constColor">length</span>);
+                                    &emsp;&emsp;}).<span class="constColor">catch</span>(<span class="varColor">error</span> => {
+                                    &emsp;&emsp;&emsp;console.<span class="constColor">log</span>(<span class="varColor">error</span>);
+                                    &emsp;});
+                                }  
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="textBreakerContainer noIcon"></div>
+                <p>
+                    I slutändan måste vi också uppdatera HTML koden som returneras så att elementen faktiskt kan kommunicera med vår kod.
+                </p>
+                <div class="textBreakerContainer noIcon"></div>
+                <div class="codeContainerText">
+                    <p class="innerContainerText">
+                        Detta kan vi åstadkomma snabbt genom att ge bildrubriken texten "Likes:" och sedan infoga "likeNum" variabeln i textelementet genom två klammerparanteser.
+                        Angående knappelementet behöver vi endast ge den en "onClick" parameter med funktionen "handleLike" som värdet.
+                        Sedan är hela vår komponent färdigställd! Grattis!
+                    </p>
+                    <div class="innerCodeContainer alteredPadding">
+                        <p class="codeHeader">12. Anpassat returneringsblock</p>
+                        <div class="codeBlockContainer">
+                            <div class="copyBtnContainer">
+                                <button class="copyBtn" id="copyBtn12" onclick="copyCodeBlock(this)">
+                                    <svg class="h-4 w-4" id="svgUnchecked12" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                    <svg class="svgHidden h-4 w-4" id="svgChecked12" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span id="copySpan12">Kopiera kod</span>
+                                </button>
+                            </div>
+                            <pre class="codeBlock" id="codeBlock12">
+                                <span class="constColor">return</span> (
+                                    &emsp;<span class="signColor">&lt;</span><span class="tagColor">div</span><span class="signColor">&gt;</span>
+                                    &emsp;&emsp;<span class="signColor">&lt;</span><span class="tagColor">p</span><span class="signColor">&gt;</span>Likes: {<span class="varColor">likeNum</span>}<span class="signColor">&lt;/</span><span class="tagColor">p</span><span class="signColor">&gt;</span>
+                                    &emsp;&emsp;<span class="signColor">&lt;</span><span class="tagColor">button</span> <span class="constColor">onClick</span>={<span class="varColor">handleLike</span>}<span class="signColor">&gt;</span>Like image<span class="signColor">&lt;/</span><span class="tagColor">button</span><span class="signColor">&gt;</span>
+                                    &emsp;<span class="signColor">&lt;/</span><span class="tagColor">div</span><span class="signColor">&gt;</span>
+                                )                                                 
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="textBreakerContainer noIcon"></div>
+                <p>
+                    Sista steget blir att importera vår komponent till "CardWithText" komponenten i CardView filen:
+                    <span class="inlineCodeText"><span class="constColor">import</span><span class="renderColor"> FetchAndPostLikes</span><span class="constColor"> from</span><span class="textColor"> "./FetchAndPost"</span>;</span>,
+                    och sedan kalla på komponenten <span class="inlineCodeText"><span class="signColor">&lt;</span><span class="componentColor">FetchAndPostLikes</span><span class="signColor"> /&gt;</span></span> nedanför bildens rubrik. 
+                    Därefter är det bara att starta upp din React applikation och din server om du inte redan du har gjort det! 
+                    Prova gärna att lägga till ytterligare funktionalitet som exempelvis kontoskapning, publicering av kommentarer, design genom css, m.m.
+                </p>
+                <div class="higherImageContainer bigHigherContainer">
+                    <div class="imageContainer imageGrid imageGrid2Items">
+                        <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeFetchAndPost2.png" alt="Figur XXIX"  onclick="enlargePicture(this)"></div>
+                        <div class="imageWrapper halfRoundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeFetchAndPost3.png" alt="Figur XXX" onclick="enlargePicture(this)"></div>
+                    </div>
+                    <p class="innerImageHeader">1. Figur XXIX, 2. Figur XXX</p>
+                </div>
+                <div class="higherImageContainer singleImage" id="lastTutorialImage">
+                    <div class="imageContainer"><img class="tutorialImage" src="./media/VSCode/serverAddLike.gif" alt="Figur XXXI"  onclick="enlargePicture(this)"><p>Figur XXXI</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pageFooterContainer">
+            <div id="footerContainer">
+                <p>© REACT<span class="wiki">wiki</span> 2022</p>
+                <div class="footerDiv">
+                    <div class="footerStart">
+                        <p>Kontaktmail:</p>
+                    </div>
+                    <div class="footerEnd">
+                        <p>03julfha@skola.boras.se</p>
+                    </div>
+                </div>
+                <div class="footerDiv" id="lastFooterDiv">
+                    <div class="footerStart">
+                        <p>Mobilnummer:</p>
+                    </div>
+                    <div class="footerEnd">
+                        <p>08-405 10 00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Image Popup-->
+    <div id="modal01" onclick="this.style.display='none'">
+        <div id="modalCrossContainer">
+            <div id="modalLine1"></div>
+            <div id="modalLine2"></div>
+        </div>
+        <div id="modalMediaContainer">
+            <img id="img01" alt="popupImage" src="./media/react_icon_bw_transparent.png">
+            <p id="caption01">Caption</p>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/tutorials.js"></script>
+</body>
+</html>

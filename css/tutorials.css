@@ -1,0 +1,546 @@
+/*#region documentSpecificTags*/
+
+::-webkit-scrollbar-track {
+    background-color: #d1d1d1;
+}  
+
+/*#endregion*/
+
+/*#region  globalTutorialTags*/
+
+#scopeTutorialContainer{
+    position: relative;
+    z-index: 2;
+    background-color: rgb(67, 67, 63);
+}
+.innerTutorialContainer{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    z-index: 1;
+}
+.tutorialBlock{
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244, 238, 238);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 50px 4px;
+    width: 80%;
+    padding: 30px;
+    height: auto;
+    border-radius: 10px;
+}
+.tutorialBlock p{
+    color: rgb(34,34,34);
+    line-height: 30px;
+}
+
+#tutorialContainer6{
+    padding-bottom: 150px;
+}
+
+/*#endregion*/
+
+/*#region contentsList*/
+
+#contentsContainer{
+
+    background-image: linear-gradient(0, rgb(240, 240, 240) 50%, rgb(135, 112, 95));
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+#sectionContents{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#contentsListContainer li{
+    display: flex;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    font-size: 20px;
+    padding: 30px;
+    color: black;
+    border-bottom: 0;
+}
+#contentsListContainer a{
+    position: relative;
+    color: black;
+    text-decoration: none;
+    z-index: 2;
+}
+#contentsListContainer li:hover,
+#contentsListContainer li:hover a {
+    color: rgb(242, 242, 242);
+    z-index: 2;
+}
+.listDiv{
+    position: absolute;
+    left: 0;
+    height: 90%;
+    z-index: 1;
+    border-radius: 5px;
+    transition: width 300ms ease-in-out;
+}
+#contentsListContainer li:not(:hover) div{
+    width: 5px;
+}
+.contentsListItem{
+    position: absolute;
+}
+#contentsListItem1 div{
+    background-color: rgb(38, 38, 38);
+}
+#contentsListItem2 div{
+    background-color: rgb(68, 68, 68);
+}
+#contentsListItem3 div{
+    background-color: rgb(64, 86, 97);
+}
+#contentsListItem4 div{
+    background-color: rgb(38, 38, 38);
+}
+#contentsListItem5 div{
+    background-color: rgb(66, 89, 80);
+}
+#contentsListItem6 div{
+    background-color: rgb(68, 68, 68);
+}
+#contentsListItem1:hover div{
+    width: 100%;
+}
+#contentsListItem2:hover div{
+    width: 100%;
+}
+#contentsListItem3:hover div{
+    width: 100%;
+}
+#contentsListItem4:hover div{
+    width: 100%;
+}
+#contentsListItem5:hover div{
+    width: 100%;
+}
+#contentsListItem6:hover div{
+    width: 100%;
+}
+
+/*#endregion*/
+
+/*#region tutorialBlockRelated*/
+
+.tutorialBlock{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.tutorialBlockHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px 0;
+    height: 30vh;
+}
+.tutorialBlockHeader.minimizedTitle{
+    margin-top: -50px;
+    height: 30vh;
+}
+.tutorialBlockHeader h1{
+    font-size: 30px;
+    text-align: center;
+    font-family: customHeavyFont;
+    font-family: "JetBrains Mono",monospace;
+    color: rgb(238, 238, 238);
+}
+
+
+@media screen and (max-width: 900px){
+    .tutorialBlockHeader{
+        height: 30vh !important;
+    }
+}
+
+/*#region specificHeaders*/
+
+#sectionWhatIsReact{
+    padding-top: 10vh;
+}
+
+/*#endregion*/
+/*#region specificTutorialBlocks*/
+
+#tutorialBlockIntro{
+    flex-direction: row !important;
+}
+#tutorialBlockInstall{
+    padding-bottom: 0;
+}
+
+/*#endregion*/
+
+/*#endregion*/
+
+/*#region codeExamples */
+
+#codeContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #d1d1d1;
+    height: auto;
+}
+.innerCodeContainer{
+    padding-top: 18px;
+    width: auto;
+    margin: auto;
+}
+.innerCodeContainer2{
+    padding-bottom: 10px;
+}
+.codeHeader{
+    text-align: center;
+    color: aliceblue;
+    font-size: 16px;
+    padding-bottom: 10px;
+    line-height: 20px !important;
+    font-weight: bold;
+    font-family: "JetBrains Mono",monospace;
+}
+.codeBlockContainer{
+    border-radius: 10px;
+    border: 1px solid rgba(123, 123, 123, 0.638);
+    background-color: rgb(40, 44, 52);
+}
+
+/*#region copyCodeButton*/
+
+.copyBtnContainer{
+    display: flex;
+    justify-content: end;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(28, 31, 37);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.copyBtnContainer svg{
+    padding-right: 7px;
+}
+.svgHidden{
+    display: none;
+}
+.copyBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 15px;
+    padding: 0 10px 0;
+    height: 100%;
+    border: none;
+    color: aliceblue;
+    background-color: rgb(28, 31, 37);
+    font-size: 15px;
+    transition: all 200ms ease-in-out;
+}
+.copyBtn:hover {
+    background-color: rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+/*#endregion*/
+
+.codeBlock{
+    margin: auto;
+    color: white;
+    text-align: start;
+    padding: 15px;
+    white-space: pre-line;
+    min-width: max-content;
+}
+.codeContainerText{
+    display: flex;
+    background-color: #d1d1d1;
+    border-radius: 10px;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.innerContainerText{
+    width: 100%;
+    text-align: start;
+    margin-right: 30px;
+}
+
+/*#region specificCodeContainers*/
+
+#codeContainerIntro{
+    padding-left: 30px;
+}
+
+/*#endregion*/
+/*#endregion*/
+
+/*#region images*/
+
+.higherImageContainer{
+    width: 100%;
+    margin: 30px 0 30px;
+    background-color: rgb(143, 137, 137);
+    border-radius: 10px;
+}
+.higherImageContainer p{
+    text-align: center;
+    padding: 0 30px 10px;
+    color: rgb(34, 34, 34);
+    user-select: none;
+    font-family: "JetBrains Mono",monospace;
+}
+.higherImageContainer.singleImage .imageContainer{
+    margin: 30px 30px 0;
+}
+.imageContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    background-color: rgba(29, 32, 38, 0);
+    margin: 30px 30px 10px;
+    border-radius: 10px;
+    padding: 0;
+}
+.imageContainer p{
+    text-align: center;
+    color: rgb(34, 34, 34);
+    user-select: none;
+    padding-top: 10px;
+    font-family: "JetBrains Mono",monospace;
+}
+.imageWrapper{
+    margin: auto;
+}
+.tutorialImage{
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.imageGrid{
+    display: grid !important;
+    gap: 15px;
+}
+.imageGrid2Items{
+    grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+}
+.imageGrid3Items{
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.lastImageContainer{
+    margin-bottom: 0;
+}
+.acquaintanceImage{
+    padding-bottom: 15px;
+    margin: 30px 30px 0 30px;
+}
+
+.overrideWidth{
+    max-width: 800px;
+    border: 1px solid rgb(169, 169, 169);
+}
+
+.textBreakerContainer{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 13px;
+}
+.textBreakerContainer.noIcon{
+    padding: 10px;
+}
+.textBreakerContainer img{
+    width: 30px;
+    height: auto;
+    opacity: 0.3;
+}
+
+#lastTutorialImage{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*#endregion*/
+
+/*#region textFilters*/
+
+.inlineCodeText{
+    background-color: rgb(30, 30, 30);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.italized{
+    font-style: italic;
+}
+.firstLetter{
+    font-size: 25px;
+}
+.tutorialLink{
+    color: rgb(109, 110, 110);
+    text-decoration-line: underline;
+}
+.highlighted{
+    color: rgb(53, 121, 153);
+    font-weight: bold;
+}
+.codeYellow{
+    color: rgb(234, 225, 63);
+}
+.codeYellowBig{
+    color: rgb(159, 154, 56) !important;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.codeLead{
+    color: rgb(191, 191, 191);
+}
+.tagColor{
+    color: rgb(252, 146, 158);
+}
+.textColor{
+    color: rgb(87, 173, 145);
+}
+.signColor{
+    color: rgb(136, 136, 136);
+}
+.constColor{
+    color: rgb(197, 165, 188);
+}
+.renderColor{
+    color: rgb(122, 194, 252);
+}
+.varColor{
+    color: rgb(130, 126, 246);
+}
+.componentColor{
+    color: rgb(238, 200, 94);
+}
+
+/*#endregion*/
+
+@media screen and (max-width: 1550px){
+    .imageGrid2Items p{
+        grid-column: span 2;
+    }
+}
+@media screen and (max-width: 1400px){
+    #tutorialBlockIntro{
+        flex-direction: column !important;
+    }
+    #codeContainerIntro{
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 1050px){
+    .imageGrid2Items p{
+        grid-column: span 1;
+    }
+}
+@media screen and (min-width: 1200px){
+    .alteredPadding{
+        padding-top: 0;
+    }
+}
+@media screen and (max-width: 1200px){
+    .tutorialBlock{
+        width: auto;
+        margin: 0 30px 0;
+    }
+    #vsCodeImage{
+        width: 500px;
+    }
+    .cardWithTextHeader{
+        padding-top: 30px;
+    }
+    .codeContainerText{
+        flex-direction: column;
+    }
+    .innerContainerText{
+        margin-right: 0;
+    }
+    .alteredPadding{
+        margin: 10px 0 10px;
+    }
+}
+@media screen and (max-width: 700px){
+
+    #contentsListContainer li{
+        font-size: 16px;
+        padding: 30px 50px 30px 50px;
+    }
+    .codeBlock{
+        min-width: auto;
+    }
+}
+@media screen and (max-width: 600px){
+    .higherImageContainer .imageContainer{
+        margin: 0 !important;
+    }
+    .bigHigherContainer{
+        background-color: rgba(0,0,0,0);
+    }
+    .innerImageHeader{
+        padding-top: 10px !important;
+        background-color: rgb(143, 137, 137);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .imageWrapper{
+        overflow: hidden;
+    }
+    .roundedWrapper{
+        border-radius: 10px;
+    }
+    .halfRoundedWrapper{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .gridImage{
+        border-radius: 0;
+        scale: 1.15;
+    }
+    .higherImageContainer.singleImage .imageContainer img{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .higherImageContainer .imageGrid{
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 600px){
+    #contentsListContainer{
+        width: 100vw;
+    }
+    .listDiv{
+        height: 100%;
+        border-radius: 0;
+    }
+}
+@media screen and (max-width: 500px){
+    .imageGrid2Items{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .imageGrid3Items{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .tutorialBlock{
+        margin: 0 15px 0;
+    }
+}

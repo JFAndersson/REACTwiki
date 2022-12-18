@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>REACTwiki - Videor</title>
+</head>
+<body>
+    
+    <div id="navContainer">
+        
+        <div id="brandTextContainer">
+            <a href="index.html">
+                <img id="brandLogo" class="reactIcon" alt="brandLogo" src="./media/react_icon.png">
+                <p id="brandText">REACT<span id="wiki">wiki</span></p>
+            </a>
+        </div>
+
+        <div class="navlinksContainer">
+            <ul>
+                <li class="navItem"><a class="nav-link" href="index.html">&lt;Hem/&gt;</a></li>
+                <li class="navItem"><a class="nav-link" href="tutorials.html">&lt;Genomgångar/&gt;</a></li>
+                <li class="navItem"><a class="nav-link clickedLink" href="media.html">&lt;Videomedia/&gt;</a></li>
+                <li class="navItem"><a class="nav-link" href="aboutus.html">&lt;Om oss/&gt;</a></li>
+            </ul>
+        </div>
+
+        <div class="burgerContainer" onclick="toggleMenu(this)">
+            <div id="line1"></div>
+            <div id="line2"></div>
+            <div id="line3"></div>
+        </div>
+    </div>
+
+    <div id="menuOverlay">
+        <ul id="menuList"></ul>
+        <p class="burgerFooter">© REACT<span class="wiki">wiki</span> 2022</p>
+    </div> 
+
+    <div class="sectionContainer" id="mediaSectionContainer">
+        <div class="sectionTop">
+            <div class="topHeaderContainer">
+                <p class="innerHeader">&lt;Media/&gt;</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sectionGrid">
+        <div class="image-grid">
+            <div class="grid-item-container image-grid-col-2 image-grid-row-2" onmouseover="onItemHover(this)" onmouseout="onItemNotHover(this)">
+                <div class="grid-cover" onclick="decideVideo(1)"><span class="invisibleSpan">1</span></div>
+                <div class="grid-item-content">
+                    <h1 onclick="redirectClick(this)">1. Hur kommer man igång med React?</h1>
+                    <img class="video" id="video1" src="media/Thumbnails/video1thumbnail.png" alt="1. Hur kommer man igång med React?§https://www.youtube.com/embed/6ps_7JCY7aM">
+                    <img class="videoPreview" id="video1preview" src="media/Thumbnails/video1preview.gif" alt="previewGif">
+                </div>
+            </div>
+            <div class="grid-item-container" onmouseover="onItemHover(this)" onmouseout="onItemNotHover(this)">
+                <div class="grid-cover" onclick="decideVideo(2)"><span class="invisibleSpan">2</span></div>
+                <div class="grid-item-content">
+                    <h1 onclick="redirectClick(this)">2. Reacts komponenter och DOM</h1>
+                    <img class="video" id="video2" src="media/rgb343434.png" alt="2. Reacts komponenter och DOM§https://www.youtube.com/embed/dQw4w9WgXcQ">
+                    <img class="videoPreview" id="video2preview" src="media/Thumbnails/errorGif.gif" alt="previewGif">
+                </div>
+            </div>
+            <div class="grid-item-container" onmouseover="onItemHover(this)" onmouseout="onItemNotHover(this)">
+                <div class="grid-cover" onclick="decideVideo(3)"><span class="invisibleSpan">3</span></div>
+                <div class="grid-item-content">
+                    <h1 onclick="redirectClick(this)">3. Hur förbereder man en databas-server för React?</h1>
+                    <img class="video" id="video3" src="media/rgb343434.png" alt="3. Hur förbereder man en databas-server för React?§https://www.youtube.com/embed/dQw4w9WgXcQ">
+                    <img class="videoPreview" id="video3preview" src="media/Thumbnails/errorGif.gif" alt="previewGif">
+                </div>
+            </div>
+            <div class="grid-item-container" onmouseover="onItemHover(this)" onmouseout="onItemNotHover(this)">
+                <div class="grid-cover" onclick="decideVideo(4)"><span class="invisibleSpan">4</span></div>
+                <div class="grid-item-content">
+                    <h1 onclick="redirectClick(this)">4. Uppdaterar komponenter i realtid med serverlagrad information</h1>
+                    <img class="video" id="video4" src="media/rgb343434.png" alt="4. Uppdaterar komponenter i realtid med serverlagrad information?§https://www.youtube.com/embed/dQw4w9WgXcQ">
+                    <img class="videoPreview" id="video4preview" src="media/Thumbnails/errorGif.gif" alt="previewGif">
+                </div>
+            </div>
+        </div>
+        <div id="pageFooterContainer">
+            <div id="footerContainer">
+                <p>© REACT<span class="wiki">wiki</span> 2022</p>
+                <div class="footerDiv">
+                    <div class="footerStart">
+                        <p>Kontaktmail:</p>
+                    </div>
+                    <div class="footerEnd">
+                        <p>03julfha@skola.boras.se</p>
+                    </div>
+                </div>
+                <div class="footerDiv" id="lastFooterDiv">
+                    <div class="footerStart">
+                        <p>Mobilnummer:</p>
+                    </div>
+                    <div class="footerEnd">
+                        <p>08-405 10 00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--Modal Video Popup-->
+    <div id="modal01" onclick="this.style.display='none'">
+        <div id="modalCrossContainer">
+            <div id="modalLine1"></div>
+            <div id="modalLine2"></div>
+        </div>
+        <div id="modalMediaContainer">
+            <iframe id="video" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p id="caption01">Caption</p>
+        </div>
+    </div>
+    
+    <script src="js/nav.js"></script>
+    <script src="js/media.js"></script>
+</body>
+</html>
