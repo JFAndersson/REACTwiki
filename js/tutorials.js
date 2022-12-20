@@ -48,9 +48,51 @@ function copyCodeBlock(element){
             console.error("Failed to copy text: ", err);
         });
     } else {
-        if (confirm("Your device does not support the clipboard API. Do you want to learn more?")) {
+        if (confirm("Din enhet stödjer inte detta clipboard API:et. Vill du veta mer?")) {
             // user clicked "OK"
             window.open("https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API");
         } 
     }
+}
+
+let subMenuClicked = false;
+let animChosen = false;
+
+function extendSubMenu(returnBtn){
+    let subMenuListContainer = document.getElementById("subMenuListContainer");
+    let possibleAnims = ["rotate1", "rotate2", "rotate3"];
+
+    if (!subMenuClicked){
+        returnBtnContainer.classList.add("expanded");
+        subMenuListContainer.classList.add("subMenuVisible");
+        delay(100).then(() => {
+            subMenuListContainer.classList.add("subLinksVisible");
+        });
+        returnBtn.classList.add(possibleAnims[Math.floor(Math.random() * 3)]);
+    }
+    else{
+        collapseSubMenuCode();
+    }
+
+    subMenuClicked = !subMenuClicked;
+}
+
+function collapseSubMenu(){
+    collapseSubMenuCode();
+    subMenuClicked = false;
+}
+
+function collapseSubMenuCode(){
+    let returnBtn = document.getElementById("returnBtn");
+    let subMenuListContainer = document.getElementById("subMenuListContainer");
+    let returnBtnContainer = document.getElementById("returnBtnContainer");
+
+    returnBtnContainer.classList.remove("expanded");
+    subMenuListContainer.classList.remove("subLinksVisible");
+    delay(50).then(() => {
+        subMenuListContainer.classList.remove("subMenuVisible");
+    });
+    if (returnBtn.classList.contains("rotate1")) returnBtn.classList.remove("rotate1");
+    else if (returnBtn.classList.contains("rotate2")) returnBtn.classList.remove("rotate2");
+    else returnBtn.classList.remove("rotate3");
 }

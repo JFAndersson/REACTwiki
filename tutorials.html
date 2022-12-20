@@ -74,7 +74,7 @@
                     Det gör detta genom att använda sig av en virtuell DOM (Document Object Model), som är en representation av ett HTML dokument i minnet, och som gör det möjligt att rendera och uppdatera komponenter på skärmen på ett smidigt sätt. 
                     Komponenter i React är rena, isolerade enheter som innehåller statisk information och logik, och som kan renderas på olika ställen i en webbapplikation.
                     React utvecklades ursprungligen av utvecklare på Facebook och Instagram för hantering av deras nyhetsflöden, men släpptes sedan offentligt på GitHub i maj 2013 och har sedan dess använts av tusentals webbutvecklare världen över. 
-                    React fortfarande får regelbundna uppdateringar och har blivit en av de mest populära teknikerna för att skapa interaktiva användargränssnitt på webben.
+                    React får fortfarande regelbundna uppdateringar och har blivit en av de mest populära teknikerna för att skapa interaktiva användargränssnitt på webben.
                     För att kunna använda React krävs det att man har grundläggande kunskaper i javascript, eftersom det är det språk som används för att skapa de element som användaren ser på sin skärm. 
                     För att möjliggöra en enkel integrering mellan javascript och HTML används en viss syntax som kallas för JSX, som är en javascript-extension som gör det möjligt att skriva html kod direkt i javascript dokument. 
                     JSX är inte nödvändigt att använda, men det förenklar arbetsprocessen avsevärt och följer automatiskt med i alla installationer av React.
@@ -91,8 +91,8 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock1">
-                                <span class="constColor">function</span> <span class="renderColor">Hello</span><span class="signColor">(props) {</span>
-                                &emsp;<span class="constColor">return</span>&ensp;<span class="signColor">&lt;</span><span class="signColor">div</span><span class="signColor">&gt;</span>Hello, <span class="signColor">{</span>props<span class="signColor">.</span>toWhat<span class="signColor">}</span><span class="signColor">&lt;/</span><span class="signColor">div</span><span class="signColor">&gt;;</span>
+                                <span class="constColor">function</span> <span class="renderColor">Hello</span>(<span class="varColor">props</span>)<span class="signColor"> {</span>
+                                &emsp;<span class="constColor">return</span><span class="signColor"> &lt;<span class="tagColor">div</span>&gt;</span>Hello, {<span class="varColor">props</span><span class="signColor">.</span>toWhat}<span class="signColor">&lt;/</span><span class="tagColor">div</span><span class="signColor">&gt;;</span>
                                 <span class="signColor">}</span>
                                 
                                 <span class="constColor">const</span> root = ReactDOM<span class="signColor">.</span><span class="renderColor">createRoot</span><span class="signColor">( </span>document<span class="signColor">.</span><span class="renderColor">getElementById</span><span class="signColor">(</span><span class="textColor">'root'</span><span class="signColor">));</span>
@@ -111,8 +111,8 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock2">
-                                <span class="constColor">function</span> <span class="renderColor">Hello</span><span class="signColor">(props) {</span>
-                                &emsp;<span class="constColor">return</span>&ensp;React<span class="signColor">.</span><span class="renderColor">createElement</span><span class="signColor">(</span><span class="textColor">'div'</span><span class="signColor">,&ensp;</span><span class="constColor">null</span><span class="signColor">,&ensp;</span><span class="textColor">`Hello&ensp;</span><span class="signColor">${</span><span class="constColor">this</span><span class="signColor">.</span>props<span class="signColor">.</span>toWhat<span class="signColor">}</span><span class="textColor">`</span><span class="signColor">);</span>
+                                <span class="constColor">function</span> <span class="renderColor">Hello</span>(<span class="varColor">props</span>) <span class="signColor">{</span>
+                                &emsp;<span class="constColor">return</span>&ensp;React<span class="signColor">.</span><span class="renderColor">createElement</span><span class="signColor">(</span><span class="textColor">'div'</span><span class="signColor">,&ensp;</span><span class="constColor">null</span><span class="signColor">,&ensp;</span><span class="textColor">`Hello&ensp;</span><span class="signColor">${</span><span class="constColor">this</span><span class="signColor">.</span><span class="varColor">props</span><span class="signColor">.</span>toWhat<span class="signColor">}</span><span class="textColor">`</span><span class="signColor">);</span>
                                 <span class="signColor">}</span>
                                     
                                 <span class="constColor">const</span> root = ReactDOM<span class="signColor">.</span><span class="renderColor">createRoot</span><span class="signColor">( </span>document<span class="signColor">.</span><span class="renderColor">getElementById</span><span class="signColor">(</span><span class="textColor">'root'</span><span class="signColor">));</span>
@@ -274,6 +274,14 @@
                     Efter du har skrivit dessa två kommandon kommer din webbläsare att öppnas och skicka dig till en lokal localhost port, oftast 3000, där din applikations DOM visas.
                     Har du följt tidigare steg noggrant kommer en tom vit skärm visas (som du kan se i figur XVI), då inga komponenter har skapats ännu.
                 </p>
+                <div class="textBreakerContainer noIcon"></div>
+                <p>
+                    <span class="codeYellowBig">Notera!</span> Du behöver endast skriva "npm start" i konsolen en gång per session, och det är endast första "npm start" kommandot som automatiskt öppnar din webbläsares flik.
+                    Skriver du in "npm start" och får tillbaka en fråga om att starta appen på en annan port än 3000 så innebär detta att du redan har en pågående session.
+                    För att nå din nuvarande sessionen skriver du endast in localhost länken <a class="tutorialLink" href="http://localhost:3000" target="_blank">http://localhost:3000</a> i din webbläsare och trycker på enter.
+                    För att se de förändringar du gjort i din applikation medan en session är igång behöver du heller inte skriva in startkommandot. 
+                    Det räcker med att du sparar de ändrade filerna i VS Code och så bör localhost:3000 uppdateras automatiskt.
+                </p>
                 <div class="higherImageContainer bigHigherContainer">
                     <div class="imageContainer imageGrid imageGrid2Items">
                         <div class="imageWrapper roundedWrapper"><img class="tutorialImage gridImage" src="./media/VSCode/VSCodeNpmStart.png" alt="Figur XV" onclick="enlargePicture(this)"></div>
@@ -332,7 +340,7 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock3">
-                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span><span class="signColor">(</span><span class="varColor">props</span><span class="signColor">){</span>
+                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span>(<span class="varColor">props</span>)<span class="signColor">{</span>
                                 &emsp;<span class="textColor">//returnera html här...</span>
                                 <span class="signColor">}</span>                          
                             </pre>
@@ -362,9 +370,9 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock4">
-                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span><span class="signColor">(</span><span class="varColor">props</span><span class="signColor">){</span>
+                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span>(<span class="varColor">props</span>)<span class="signColor">{</span>
                                 &emsp;<span class="constColor">return</span> (
-                                &emsp;&emsp;<span class="signColor">&lt;div&gt;&lt;/div&gt;</span>
+                                &emsp;&emsp;<span class="signColor">&lt;<span class="tagColor">div</span>&gt;&lt;/<span class="tagColor">div</span>&gt;</span>
                                 &emsp;)
                                 <span class="signColor">}</span>                          
                             </pre>
@@ -398,12 +406,12 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock5">
-                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span><span class="signColor">(</span><span class="varColor">props</span><span class="signColor">){</span>
+                                <span class="constColor">function</span> <span class="renderColor">CardWithText</span>(<span class="varColor">props</span>)<span class="signColor">{</span>
                                 &emsp;<span class="constColor">return</span> (
-                                &emsp;&emsp;<span class="signColor">&lt;div</span> <span class="tagColor">className</span>=<span class="textColor">"postContainer"</span><span class="signColor">&gt;</span> 
-                                &emsp;&emsp;&emsp;<span class="signColor">&lt;img</span> <span class="constColor">src</span>={<span class="varColor">props</span><span class="signColor">.</span>url} <span class="constColor">alt</span>=<span class="textColor">"picture"</span> <span class="signColor">/&gt;</span>
-                                &emsp;&emsp;&emsp;<span class="signColor">&lt;p&gt;</span>{<span class="varColor">props</span><span class="signColor">.</span>caption}<span class="signColor">&lt;/p&gt;</span>     
-                                &emsp;&emsp;<span class="signColor">&lt;/div&gt;</span>
+                                &emsp;&emsp;<span class="signColor">&lt;</span><span class="tagColor">div className</span>=<span class="textColor">"postContainer"</span><span class="signColor">&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;</span><span class="tagColor">img</span> <span class="constColor">src</span>={<span class="varColor">props</span><span class="signColor">.</span>url} <span class="constColor">alt</span>=<span class="textColor">"picture"</span> <span class="signColor">/&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;<span class="tagColor">p</span>&gt;</span>{<span class="varColor">props</span><span class="signColor">.</span>caption}<span class="signColor">&lt;/<span class="tagColor">p</span>&gt;</span>     
+                                &emsp;&emsp;<span class="signColor">&lt;/<span class="tagColor">div</span>&gt;</span>
                                 &emsp;)
                                 <span class="signColor">}</span>                          
                             </pre>
@@ -451,23 +459,25 @@
                 <p>
                     Serverkommunikation är en mycket viktig del inom React utveckling. 
                     Först och främst ger den dig möjlighet att bygga applikationer som kan visa dynamisk data -
-                    till exempel om du bygger en sociala media-applikation och du hämtar de senaste inläggen från en server. 
+                    till exempel om du bygger en social media-applikation och du hämtar de senaste inläggen från en server. 
                     Utan denna kommunikation skulle din applikation endast kunna visa statisk information som är inbyggt i programmet.
                     Det vill säga att applikationer och hemsidor som är dynamiska, data-drivna och kan interagera med andra system och API:er (99% av internet) inte hade kunnat utvecklas.
-                    I den följande genomgången kommer jag därför att förklara hur du kan bygga sådana system.
+                    I den följande genomgången kommer jag därför att förklara hur du kan bygga ett sådant system.
                 </p>
                 <div class="textBreakerContainer noIcon"></div>
                 <div class="codeContainerText">
                     <p class="innerContainerText">
-                        Första steget blir således att skapa serverns projektmapp. 
+                        Första steget blir således att skapa serverns projektmapp som du sedan vill placera i samma rot-mapp som din react applikation.
+                        Detta kan du göra smidigt i VS Code genom att klicka på mappikonen med en plussymbol. 
+                        Denna ikon dyker upp längst upp i vänsterspalten (filträdsutforskaren) när din datormus hovrar någonstans i filträdet.
                         Denna mapp kan du exempelvis döpa till "server".
                         Efter du har skapat mappen vill vi installera alla serverfiler. 
                         Detta åstadkommer vi genom att skriva det följande i konsolen (om "server" var vad du kallade mappen): <span class="inlineCodeText"><span class="codeYellow">cd</span> server</span>, och därefter 
                         <span class="inlineCodeText"><span class="codeYellow">npm</span> install json-server</span> i samma kommandotolk.
-                        När vi har installerat serverns filer har vi dock inte fått med någon databas som faktiskt lagrar data. 
-                        Denna databasen, dvs fil, behöver vi skapa på egen hand och sedan döpa till <span class="highlighted">db.json</span>.
+                        När vi har installerat serverns filer har vi dock inte fått med någon fil som faktiskt lagrar data. 
+                        Denna behöver vi skapa på egen hand och sedan döpa till <span class="highlighted">db.json</span>.
                         Notera filens tagg, <span class="highlighted">.json</span>, vilket är javascript format som primärt används för att skriva databaser.
-                        Denna filen behöver sedan ligga bredvid de andra två ".json" filerna, <span class="highlighted">package.json</span> och <span class="highlighted">package-lock.json</span>, vars uppgifter är att lagra serverns metadata.
+                        Dokumentet vi precis döpte till "db.json" behöver sedan placeras hierarkiskt längst upp i servermappen på samma ställe de två andra ".json" filerna, <span class="highlighted">package.json</span> och <span class="highlighted">package-lock.json</span>, vars uppgifter är att lagra serverns metadata.
                         I vår nyskapade databasfil vill vi sedan formulera informationen som vi vill lagra. 
                         Eftersom vi tidigare skapade en bild och en rubrik, vilket hade kunnat tolkas som ett inlägg på en social media, 
                         hade vi kunnat skapa en databas som lagrar inläggens "likes". I så fall kan vi använda den följande json koden som skapar en array "likes" och ger array:en ett objekt som representerar en gillning.
@@ -505,7 +515,7 @@
                 <p>
                     Sista steget blir att starta servern, och detta gör vi genom att skriva <span class="inlineCodeText"><span class="codeYellow">json-server</span> --watch db.json</span> i servermappens kommandotolk.
                     Detta kommandot (eller mer specifikt "--watch" delen av kommandot) gör även så att servern automatiskt uppdateras varje gång man manuellt går in och ändrar <span class="highlighted">db.json</span> filens innehåll.
-                    Man behöver alltså inte starta servern på nytt varje gång innehållet ändras, vilket underlättar arbetsprocessen. 
+                    Man behöver alltså inte starta databas-servern på nytt varje gång innehållet ändras, vilket underlättar arbetsprocessen. 
                     Efter du har skrivit in detta i VSCode terminalen borde du tas till din webbläsare där du får se en vit skärm med massa text.
                     I mitten av denna skärmen hittar vi <span class="highlighted">/likes</span> sektionen av din databas, och om vi klickar på denna länken hittar vi alla sparade likes.
                 </p>
@@ -569,12 +579,12 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock7">
-                                <span class="constColor">function</span> <span class="renderColor">FetchAndPostLikes</span><span class="signColor">(){</span>
+                                <span class="constColor">function</span> <span class="renderColor">FetchAndPostLikes</span>()<span class="signColor">{</span>
                                 &emsp;<span class="constColor">return</span> (
-                                &emsp;&emsp;<span class="signColor">&lt;div&gt;</span>
-                                &emsp;&emsp;&emsp;<span class="signColor">&lt;p&gt;</span><span class="signColor">&lt;/p&gt;</span>
-                                &emsp;&emsp;&emsp;<span class="signColor">&lt;button&gt;</span><span class="signColor">&lt;/button&gt;</span>
-                                &emsp;&emsp;<span class="signColor">&lt;/div&gt;</span>
+                                &emsp;&emsp;<span class="signColor">&lt;<span class="tagColor">div</span>&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;<span class="tagColor">p</span>&gt;</span><span class="signColor">&lt;/<span class="tagColor">p</span>&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;<span class="tagColor">button</span>&gt;</span><span class="signColor">&lt;/<span class="tagColor">button</span>&gt;</span>
+                                &emsp;&emsp;<span class="signColor">&lt;/<span class="tagColor">div</span>&gt;</span>
                                 &emsp;)
                                 <span class="signColor">}</span>
                               </pre>
@@ -610,15 +620,15 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock8">
-                                <span class="constColor">function</span> <span class="renderColor">FetchAndPostLikes</span><span class="signColor">(){</span>
+                                <span class="constColor">function</span> <span class="renderColor">FetchAndPostLikes</span>()<span class="signColor">{</span>
                               
-                                &emsp;<span class="constColor">const</span> [<span class="varColor">likeNum</span>, <span class="varColor">setLikeNum</span>] = <span class="constColor">useState</span>(<span class="numberColor">0</span>);
+                                &emsp;<span class="constColor">const</span> [<span class="varColor">likeNum</span>, <span class="renderColor">setLikeNum</span>] = <span class="constColor">useState</span>(<span class="varColor">0</span>);
                               
                                 &emsp;<span class="constColor">return</span> (
-                                &emsp;&emsp;<span class="signColor">&lt;div&gt;</span>
-                                &emsp;&emsp;&emsp;<span class="signColor">&lt;p&gt;</span><span class="signColor">&lt;/p&gt;</span>
-                                &emsp;&emsp;&emsp;<span class="signColor">&lt;button&gt;</span><span class="signColor">&lt;/button&gt;</span>
-                                &emsp;&emsp;<span class="signColor">&lt;/div&gt;</span>
+                                &emsp;&emsp;<span class="signColor">&lt;<span class="tagColor">div</span>&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;<span class="tagColor">p</span>&gt;</span><span class="signColor">&lt;/<span class="tagColor">p</span>&gt;</span>
+                                &emsp;&emsp;&emsp;<span class="signColor">&lt;<span class="tagColor">button</span>&gt;</span><span class="signColor">&lt;/<span class="tagColor">button</span>&gt;</span>
+                                &emsp;&emsp;<span class="signColor">&lt;/<span class="tagColor">div</span>&gt;</span>
                                 &emsp;)
                                 <span class="signColor">}</span>
                             </pre>                              
@@ -656,16 +666,15 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock9">
-                                <span class="constColor">useEffect</span>(<span class="signColor">()</span> => {
+                                <span class="constColor">useEffect</span>(<span class="signColor">() => {</span>
                               
-                                &emsp;<span class="constColor">const</span> <span class="renderColor">getData</span> = <span class="constColor">async</span> <span class="signColor">()</span> => {
+                                &emsp;<span class="constColor">const</span> <span class="renderColor">getData</span> = <span class="constColor">async</span> () <span class="signColor">=> {</span>
                                 &emsp;&emsp;<span class="textColor">//skriv kod här</span>
-                                &emsp;};
+                                &emsp;<span class="signColor">};</span>
                               
-                                &emsp;<span class="renderColor">getData</span>();
-                                }, [<span class="varColor">likeNum</span>]);
-                              </pre>
-                              
+                                &emsp;<span class="renderColor">getData</span>()<span class="signColor">;</span>
+                                <span class="signColor">},</span> [<span class="varColor">likeNum</span>])<span class="signColor">;</span>
+                            </pre> 
                         </div>
                     </div>
                 </div>
@@ -691,20 +700,20 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock10">
-                                <span class="constColor">useEffect</span>(<span class="signColor">()</span> => {
+                                <span class="constColor">useEffect</span>(<span class="signColor">() => {</span>
                               
-                                &emsp;<span class="constColor">const</span> <span class="renderColor">getData</span> = <span class="constColor">async</span> <span class="signColor">()</span> => {
+                                &emsp;<span class="constColor">const</span> <span class="renderColor">getData</span> = <span class="constColor">async</span> () <span class="signColor">=> {</span>
                                           
                                 &emsp;&emsp;<span class="constColor">await</span> axios<span class="signColor">.</span><span class="renderColor">get</span>(<span class="textColor">"http://localhost:3000/likes"</span>)
                                 &emsp;&emsp;.then(<span class="varColor">response</span> => {
-                                &emsp;&emsp;&emsp;<span class="tagColor">setLikeNum</span>(<span class="varColor">response</span>.<span class="constColor">data</span>.<span class="constColor">length</span>);
+                                &emsp;&emsp;&emsp;<span class="renderColor">setLikeNum</span>(<span class="varColor">response</span>.<span class="constColor">data</span>.<span class="constColor">length</span>);
                                 &emsp;&emsp;}).catch(<span class="varColor">error</span> => {
                                 &emsp;&emsp;&emsp;console.<span class="constColor">log</span>(<span class="varColor">error</span>);
                                 &emsp;&emsp;});
-                                &emsp;};
+                                &emsp;<span class="signColor">};</span>
                               
-                                &emsp;<span class="renderColor">getData</span>();
-                                }, [<span class="varColor">likeNum</span>]);
+                                &emsp;<span class="renderColor">getData</span>()<span class="signColor">;</span>
+                                <span class="signColor">},</span> [<span class="varColor">likeNum</span>]);
                             </pre>
                         </div>
                     </div>
@@ -738,7 +747,7 @@
                                 </button>
                             </div>
                             <pre class="codeBlock" id="codeBlock11">
-                                const <span class="constColor">handleLike</span> = <span class="constColor">()</span> => {
+                                const <span class="constColor">handleLike</span> = () <span class="signColor">=> {</span>
 
                                     &emsp;const <span class="varColor">like</span> = {
                                     &emsp;&emsp;<span class="constColor">user</span>: <span class="textColor">"Ny användare"</span>
@@ -746,7 +755,7 @@
                                     
                                     &emsp;axios.<span class="constColor">post</span>(<span class="textColor">"http://localhost:3000/likes"</span>, <span class="varColor">like</span>)
                                     &emsp;&emsp;.<span class="constColor">then</span>(<span class="varColor">response</span> => {
-                                    &emsp;&emsp;&emsp;<span class="tagColor">setLikeNum</span>(<span class="varColor">response</span>.<span class="constColor">data</span>.<span class="constColor">length</span>);
+                                    &emsp;&emsp;&emsp;<span class="renderColor">setLikeNum</span>(<span class="varColor">response</span>.<span class="constColor">data</span>.<span class="constColor">length</span>);
                                     &emsp;&emsp;}).<span class="constColor">catch</span>(<span class="varColor">error</span> => {
                                     &emsp;&emsp;&emsp;console.<span class="constColor">log</span>(<span class="varColor">error</span>);
                                     &emsp;});
@@ -828,6 +837,22 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!--Submenu-->
+    <div id="returnBtnContainer">
+        <img onclick="extendSubMenu(this)" class="svgfilter" id="returnBtn" src="media/svg/show-more.svg" alt="show-more">
+        <div id="subMenuListContainer">
+            <ul>
+                <li onclick="collapseSubMenu()"><a href="#contentsContainer"><img id="arrowUp" src="media/arrow-up.png" alt="arrowUpBtn"></a></li>
+                <li onclick="collapseSubMenu()"><a href="#sectionWhatIsReact">I</a></li>
+                <li onclick="collapseSubMenu()"><a href="#sectionInstall">II</a></li>
+                <li onclick="collapseSubMenu()"><a href="#sectionComponents">III</a></li>
+                <li onclick="collapseSubMenu()"><a href="#sectionRender">IV</a></li>
+                <li onclick="collapseSubMenu()"><a href="#sectionServer">V</a></li>
+                <li onclick="collapseSubMenu()"><a href="#sectionUpdate">VI</a></li>
+            </ul>
         </div>
     </div>
 

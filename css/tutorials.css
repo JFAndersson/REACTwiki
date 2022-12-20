@@ -40,6 +40,92 @@
     padding-bottom: 150px;
 }
 
+#returnBtnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    background-color: rgb(221, 218, 208);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    cursor: pointer;
+    border-radius: 10px;
+    bottom: 50px;
+    right: -100px;
+    z-index: 5;
+    transition: all 300ms ease-in-out;
+}
+#returnBtnContainer.containerVisible{
+    right: 50px;
+}
+#returnBtnContainer.expanded{
+    height: 500px;
+}
+#returnBtn{
+    position: absolute;
+    bottom: 10px;
+    width: 40px;
+    height: auto;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+#subMenuListContainer{
+    display: none;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    height: auto;
+    width: 100%;
+    transition: all 300ms ease-in-out;
+}
+#subMenuListContainer ul{
+    list-style: none;
+    text-align: center;
+}
+#subMenuListContainer ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+}
+#subMenuListContainer ul a{
+    width: 100%;
+    color: rgb(34,34,34);
+    text-decoration: none;
+    font-size: 25px;
+}
+#subMenuListContainer.subMenuVisible{
+    display: unset;
+}
+#subMenuListContainer.subLinksVisible{
+    opacity: 1;
+}
+.fade-in{
+    opacity: 0;
+}
+.linkVisible{
+    opacity: 1 !important;
+}
+#returnBtn.rotate1{
+    transform: rotate(90deg);
+}
+#returnBtn.rotate2{
+    transform: rotate(270deg);
+}
+#returnBtn.rotate3{
+    transform: rotate(450deg);
+}
+
+#arrowUp{
+    width: 27px;
+    height: auto;
+}
+.svgfilter{
+    filter: invert(15%) sepia(0%) saturate(618%) hue-rotate(207deg) brightness(99%) contrast(84%);
+}
+
 /*#endregion*/
 
 /*#region contentsList*/

@@ -138,15 +138,18 @@ window.onscroll = () => {
         navContainer.classList.remove("zeroTransition");
     }
 
-    if (document.getElementsByClassName("nav-link")[1].classList.contains("clicked")){
-        if (window.scrollY > (window.screen.height + contentsContainer.scrollHeight)){
+    if (document.getElementsByClassName("nav-link")[1].classList.contains("clickedLink")){
+        if (window.scrollY > contentsContainer.scrollHeight){
+            document.getElementById("returnBtnContainer").classList.add("containerVisible");
             scrolledPassedStart = true;
         }
         else{
-            scrolledPassedStart = true;
+            document.getElementById("returnBtnContainer").classList.remove("containerVisible");
+            scrolledPassedStart = false;
         }
     }
     else{
+
         if (window.scrollY > window.screen.height){
             scrolledPassedStart = true;
         }
@@ -187,8 +190,6 @@ window.onscroll = () => {
         brandLogo.src = "./media/react_icon.png";
 
         if (navFixed){
-
-            console.log("remove black")
 
             navContainer.classList.add("fadeOut");
             delay(200).then(() => {
@@ -239,7 +240,7 @@ window.onscroll = () => {
     else{
         //om navbaren befinner sig i tutorials.html kan den inte minimeras ovanför innehållsförteckningen
         if (document.getElementsByClassName("nav-link")[1].classList.contains("clicked")){
-            if (window.scrollY > (window.screen.height + contentsContainer.scrollHeight) && window.scrollY > scrollOffset && navFixed && !navLoad){
+            if (window.scrollY > contentsContainer.scrollHeight && window.scrollY > scrollOffset && navFixed && !navLoad){
                 scrollYOnCompress =  window.scrollY;
                 navCompressed = true;
                 navContainer.classList.add("backgroundHidden");
